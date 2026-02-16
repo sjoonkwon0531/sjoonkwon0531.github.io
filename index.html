@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>권석준 Seokjoon Kwon — Semiconductor Strategist & Scholar</title>
+<meta name="description" content="Seokjoon Kwon (S. Joon Kwon), Ph.D. — Associate Professor & Associate Dean at SKKU. Semiconductor strategist, policy advisor, bestselling author.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* === VARIABLES === */
+:root {
+  --bg: #faf9f6; --bg-dark: #0c0f14; --bg-card: #fff; --bg-card-dark: #1a1f2e;
+  --txt: #1a1a2e; --txt2: #4a4a6a; --txt-l: #e8e6e1; --txt-m: #8a8aa0;
+  --acc: #b8860b; --acc-l: #d4a843; --bdr: #e5e3de; --bdr-d: #2a2f3e;
+  --sh-s: 0 1px 3px rgba(0,0,0,.06); --sh-m: 0 4px 16px rgba(0,0,0,.08); --sh-l: 0 12px 40px rgba(0,0,0,.12);
+  --r: 6px; --rl: 12px; --max: 1200px; --nav: 64px;
+  --fd: 'Cormorant Garamond','Noto Serif KR','Noto Serif SC',serif;
+  --fb: 'DM Sans','Noto Sans KR','Noto Sans SC',sans-serif;
+  --fk: 'Noto Serif KR',serif; --fkb: 'Noto Sans KR',sans-serif;
+  --fc: 'Noto Serif SC',serif; --fcb: 'Noto Sans SC',sans-serif;
+  --fm: 'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--fb);background:var(--bg);color:var(--txt);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* === TRILINGUAL SYSTEM === */
+/* Default: Korean visible */
+[data-en],[data-cn]{display:none}
+body.en [data-ko]{display:none}
+body.en [data-en]{display:revert}
+body.en [data-cn]{display:none}
+body.cn [data-ko]{display:none}
+body.cn [data-en]{display:none}
+body.cn [data-cn]{display:revert}
+
+/* Chinese-specific font adjustments */
+body.cn{font-family:'Noto Sans SC','DM Sans',sans-serif}
+body.cn .section-title,body.cn .hero-name-kr{font-family:var(--fc)}
+
+/* === NAV === */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,3rem);background:rgba(250,249,246,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);transition:all .3s}
+nav.scrolled{box-shadow:var(--sh-s)}
+.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--txt);text-decoration:none;letter-spacing:-.02em}
+.nav-logo span{color:var(--acc)}
+.nav-links{display:flex;gap:.25rem;align-items:center}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--txt2);text-decoration:none;padding:.4rem .75rem;border-radius:var(--r);transition:all .2s}
+.nav-links a:hover{color:var(--txt);background:rgba(0,0,0,.04)}
+.lang-group{display:flex;gap:2px;margin-left:.75rem}
+.lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:.3rem .6rem;border:1.5px solid var(--bdr);border-radius:0;background:none;cursor:pointer;color:var(--txt2);transition:all .2s}
+.lang-btn:first-child{border-radius:100px 0 0 100px}
+.lang-btn:last-child{border-radius:0 100px 100px 0}
+.lang-btn.active{background:var(--txt);color:var(--bg);border-color:var(--txt)}
+.nav-mob{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav-mob svg{width:22px;height:22px;stroke:var(--txt)}
+
+/* === HERO === */
+.hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav) + 3rem) clamp(1.5rem,4vw,3rem) 4rem;position:relative}
+.hero::after{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(184,134,11,.03) 100%);pointer-events:none}
+.hero-inner{max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.hero-text{max-width:560px}
+.hero-label{font-family:var(--fm);font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.hero-label::before{content:'';width:32px;height:1.5px;background:var(--acc)}
+.hero-name{font-family:var(--fd);font-size:clamp(2.6rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;color:var(--txt);margin-bottom:.25rem}
+.hero-name-sub{font-family:var(--fm);font-size:.85rem;color:var(--txt-m);margin-bottom:.4rem;letter-spacing:.02em}
+.hero-name-kr{font-family:var(--fk);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:600;color:var(--txt2);margin-bottom:1.5rem;letter-spacing:.05em}
+.hero-title{font-size:1.02rem;color:var(--txt2);line-height:1.8;margin-bottom:2rem}
+.hero-title strong{color:var(--txt);font-weight:600}
+.hero-roles{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.role-chip{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:.35rem .85rem;border-radius:100px;border:1px solid var(--bdr);color:var(--txt2);background:var(--bg-card);transition:all .2s}
+.role-chip:hover{border-color:var(--acc);color:var(--acc)}
+.role-chip.ac{background:var(--acc);color:#fff;border-color:var(--acc)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--bdr)}
+.hero-stat-num{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--txt);line-height:1}
+.hero-stat-label{font-size:.72rem;color:var(--txt-m);margin-top:.3rem;font-weight:500}
+
+/* Hero card */
+.hero-card{background:var(--bg-dark);color:var(--txt-l);border-radius:var(--rl);padding:2.5rem;position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%)}
+.hc-label{font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--acc-l);margin-bottom:1.5rem}
+.hero-card h3{font-family:var(--fd);font-size:1.45rem;font-weight:600;margin-bottom:1.5rem;line-height:1.3}
+.hc-list{list-style:none}
+.hc-list li{font-size:.85rem;padding:.6rem 0;border-bottom:1px solid var(--bdr-d);display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.hc-list li:last-child{border-bottom:none}
+.hc-list .lb{color:rgba(255,255,255,.5);font-size:.78rem;flex-shrink:0}
+.hc-list .vl{color:var(--txt-l);font-weight:500;text-align:right}
+.hc-links{display:flex;gap:.5rem;margin-top:1.5rem;flex-wrap:wrap}
+.hc-links a{font-size:.72rem;font-weight:600;color:var(--acc-l);text-decoration:none;padding:.3rem .7rem;border:1px solid rgba(184,134,11,.3);border-radius:100px;transition:all .2s}
+.hc-links a:hover{background:rgba(184,134,11,.15);border-color:var(--acc-l)}
+
+/* Google Scholar live badge */
+.gs-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);border-radius:100px;padding:.25rem .7rem;font-size:.7rem;font-weight:600;color:#4285f4;margin-top:.75rem;text-decoration:none;transition:all .2s}
+.gs-badge:hover{background:rgba(66,133,244,.2)}
+.gs-badge svg{width:14px;height:14px}
+
+/* === SECTIONS === */
+section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
+.si{max-width:var(--max);margin:0 auto}
+.sl{font-family:var(--fm);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+.sl::before{content:'';width:24px;height:1.5px;background:var(--acc)}
+.st{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--txt);margin-bottom:1rem}
+.ss{font-size:1rem;color:var(--txt2);max-width:640px;line-height:1.7;margin-bottom:3rem}
+.dark{background:var(--bg-dark);color:var(--txt-l)}
+.dark .st{color:var(--txt-l)}
+.dark .ss{color:rgba(255,255,255,.6)}
+.alt-bg{background:#f5f3ee}
+
+/* === CONSULTING GRID === */
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
+.cc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;transition:all .3s;position:relative}
+.cc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.cc-org{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:.75rem}
+.cc h3{font-size:.95rem;font-weight:600;margin-bottom:.5rem;line-height:1.5}
+.cc p{font-size:.82rem;color:var(--txt2);line-height:1.6}
+.cc-meta{font-size:.72rem;color:var(--txt-m);margin-top:.75rem}
+.cc-flag{position:absolute;top:1.5rem;right:1.5rem;font-size:1.2rem}
+
+/* === GOV GRID === */
+.gg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.gc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:2rem;transition:all .3s}
+.gc:hover{border-color:var(--acc)}
+.gc-icon{width:40px;height:40px;border-radius:50%;background:rgba(184,134,11,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
+.gc h3{font-size:.9rem;font-weight:600;margin-bottom:.5rem;color:var(--txt-l)}
+.gc p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6}
+.gc .yr{font-family:var(--fm);font-size:.7rem;color:var(--acc-l);margin-top:.5rem}
+
+/* === MEDIA GRID === */
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.mc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:1.75rem;transition:all .3s;text-decoration:none;color:inherit;display:block}
+.mc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;margin-bottom:.75rem}
+.b-intl{background:#dbeafe;color:#1e40af}.b-dom{background:#fef3c7;color:#92400e}.b-bc{background:#ede9fe;color:#6d28d9}.b-col{background:#d1fae5;color:#065f46}.b-pol{background:#fce7f3;color:#9d174d}
+.mc h3{font-size:.9rem;font-weight:600;margin-bottom:.4rem;line-height:1.5}
+.mc .src{font-size:.75rem;color:var(--txt-m);font-weight:500}
+.mc .dt{font-size:.72rem;color:var(--txt-m)}
+
+/* === BOOKS GRID === */
+.bg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.bc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;text-align:center;transition:all .3s}
+.bc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.bc-em{font-size:3rem;margin-bottom:1rem}
+.bc h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.bc .bsub{font-size:.78rem;color:var(--txt-m);margin-bottom:.75rem}
+.bc p{font-size:.82rem;color:var(--txt2);line-height:1.6}
+.bt{display:inline-block;font-size:.65rem;font-weight:700;padding:.2rem .55rem;border-radius:100px;margin-top:.75rem}
+.bt-best{background:#fef3c7;color:#92400e}.bt-sj{background:#dbeafe;color:#1e40af}.bt-new{background:#fce7f3;color:#9d174d}
+
+/* === RESEARCH GRID === */
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+.rc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:1.75rem;transition:all .3s}
+.rc:hover{border-color:rgba(184,134,11,.4)}
+.rc-n{font-family:var(--fm);font-size:.65rem;color:var(--acc-l);margin-bottom:.75rem}
+.rc h3{font-size:.95rem;font-weight:600;color:var(--txt-l);margin-bottom:.5rem;line-height:1.4}
+.rc p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* === PUBLICATIONS === */
+.pl{display:flex;flex-direction:column;gap:1rem}
+.pi{display:grid;grid-template-columns:120px 1fr auto;gap:1.25rem;align-items:start;padding:1.25rem 0;border-bottom:1px solid var(--bdr)}
+.pj{font-family:var(--fm);font-size:.62rem;font-weight:600;color:var(--acc);letter-spacing:.02em;padding-top:.25rem;line-height:1.4}
+.pt{font-size:.86rem;font-weight:500;line-height:1.5}
+.pt em{font-style:italic;color:var(--txt2);font-weight:400;font-size:.8rem}
+.py{font-family:var(--fm);font-size:.75rem;color:var(--txt-m);white-space:nowrap}
+.pb{display:inline-block;font-size:.6rem;font-weight:700;padding:.15rem .45rem;border-radius:100px;background:#fef3c7;color:#92400e;margin-left:.5rem;vertical-align:middle}
+
+/* === TIMELINE === */
+.tl{position:relative;padding-left:2.5rem;max-width:700px;margin-top:2rem}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--bdr)}
+.ti{position:relative;padding-bottom:2rem}
+.ti::before{content:'';position:absolute;left:-2.5rem;top:.5rem;width:10px;height:10px;border-radius:50%;background:var(--acc);border:2px solid var(--bg)}
+.alt-bg .ti::before{border-color:#f5f3ee}
+.ty{font-family:var(--fm);font-size:.7rem;color:var(--acc);margin-bottom:.25rem}
+.tt{font-size:.95rem;font-weight:600;margin-bottom:.2rem}
+.td{font-size:.82rem;color:var(--txt2)}
+
+/* === CONTACT === */
+.ctg{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cti{display:flex;gap:1rem;align-items:start;margin-bottom:1.5rem}
+.ct-icon{width:36px;height:36px;border-radius:50%;background:rgba(184,134,11,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.cti .lb{font-size:.72rem;color:var(--txt-m);font-weight:500}
+.cti .vl{font-size:.9rem;font-weight:500}
+.cti a{color:var(--txt);text-decoration:none}
+.cti a:hover{color:var(--acc)}
+.ct-links{display:flex;flex-wrap:wrap;gap:.75rem}
+.ct-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;color:var(--txt);text-decoration:none;padding:.6rem 1.2rem;border:1px solid var(--bdr);border-radius:var(--r);transition:all .2s}
+.ct-link:hover{border-color:var(--acc);color:var(--acc);background:rgba(184,134,11,.04)}
+
+/* === FOOTER === */
+footer{background:var(--bg-dark);color:rgba(255,255,255,.4);padding:3rem clamp(1.5rem,4vw,3rem);text-align:center;font-size:.78rem}
+footer a{color:var(--acc-l);text-decoration:none}
+
+/* === ANIMATIONS === */
+.fu{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.fu.v{opacity:1;transform:translateY(0)}
+
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-card{max-width:480px}
+  .gg{grid-template-columns:1fr}
+  .ctg{grid-template-columns:1fr}
+  .pi{grid-template-columns:1fr;gap:.5rem}
+  .pj{padding-top:0}.py{order:-1}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:var(--nav);left:0;right:0;background:rgba(250,249,246,.98);backdrop-filter:blur(16px);padding:1rem;border-bottom:1px solid var(--bdr)}
+  .nav-mob{display:block}
+  .hero-stats{gap:1.5rem;flex-wrap:wrap}
+  .cg,.bg-grid,.rg,.mg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav id="nav">
+  <a href="#" class="nav-logo">S. Joon <span>Kwon</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#strategy"><span data-ko>전략·자문</span><span data-en>Strategy</span><span data-cn>战略·咨询</span></a>
+    <a href="#advisory"><span data-ko>정부 자문</span><span data-en>Advisory</span><span data-cn>政府顾问</span></a>
+    <a href="#media"><span data-ko>미디어</span><span data-en>Media</span><span data-cn>媒体</span></a>
+    <a href="#books"><span data-ko>저서</span><span data-en>Books</span><span data-cn>著作</span></a>
+    <a href="#research"><span data-ko>연구</span><span data-en>Research</span><span data-cn>研究</span></a>
+    <a href="#publications"><span data-ko>논문</span><span data-en>Papers</span><span data-cn>论文</span></a>
+    <a href="#career"><span data-ko>경력</span><span data-en>Career</span><span data-cn>履历</span></a>
+    <a href="#contact"><span data-ko>연락처</span><span data-en>Contact</span><span data-cn>联系</span></a>
+    <div class="lang-group">
+      <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+      <button class="lang-btn" onclick="setLang('en')">ENG</button>
+      <button class="lang-btn" onclick="setLang('cn')">中文</button>
+    </div>
+  </div>
+  <button class="nav-mob" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+<div class="hero-inner">
+  <div class="hero-text fu">
+    <div class="hero-label">
+      <span data-ko>성균관대학교 공과대학 부학장</span>
+      <span data-en>Associate Dean, School of Engineering, SKKU</span>
+      <span data-cn>成均馆大学工学院副院长</span>
+    </div>
+    <h1 class="hero-name">Seokjoon Kwon</h1>
+    <div class="hero-name-sub">(S. Joon Kwon), Ph.D.</div>
+    <p class="hero-name-kr">
+      <span data-ko>권석준 · 權錫俊</span>
+      <span data-en>권석준 · 權錫俊</span>
+      <span data-cn>权锡俊 · 權錫俊</span>
+    </p>
+    <p class="hero-title">
+      <span data-ko><strong>반도체 공학자</strong>이자 <strong>산업 전략가</strong>, <strong>정책 자문위원</strong>, 그리고 <strong>베스트셀러 저자</strong>.<br>차세대 반도체 소재·공정 연구와 글로벌 반도체 공급망 전략을 결합하여, 학계·산업계·정부를 잇는 다리 역할을 수행합니다.</span>
+      <span data-en><strong>Semiconductor engineer</strong>, <strong>industry strategist</strong>, <strong>policy advisor</strong>, and <strong>bestselling author</strong>.<br>Bridging next-gen semiconductor R&D with global supply chain strategy — connecting academia, industry, and government.</span>
+      <span data-cn><strong>半导体工程师</strong>、<strong>产业战略家</strong>、<strong>政策顾问</strong>及<strong>畅销书作者</strong>。<br>将新一代半导体材料与工艺研究同全球供应链战略相结合，搭建学术界、产业界与政府之间的桥梁。</span>
+    </p>
+    <div class="hero-roles">
+      <span class="role-chip ac"><span data-ko>반도체 전략가</span><span data-en>Semiconductor Strategist</span><span data-cn>半导体战略家</span></span>
+      <span class="role-chip"><span data-ko>정책 자문위원</span><span data-en>Policy Advisor</span><span data-cn>政策顾问</span></span>
+      <span class="role-chip"><span data-ko>베스트셀러 저자</span><span data-en>Bestselling Author</span><span data-cn>畅销书作者</span></span>
+      <span class="role-chip"><span data-ko>과학 커뮤니케이터</span><span data-en>Science Communicator</span><span data-cn>科学传播者</span></span>
+      <span class="role-chip"><span data-ko>기술 컨설턴트</span><span data-en>Tech Consultant</span><span data-cn>技术顾问</span></span>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num" id="statPapers">90+</div>
+        <div class="hero-stat-label"><span data-ko>SCI 논문</span><span data-en>SCI Papers</span><span data-cn>SCI论文</span></div>
+      </div>
+      <div>
+        <div class="hero-stat-num" id="statCitations">3,641</div>
+        <div class="hero-stat-label"><span data-ko>피인용 수</span><span data-en>Citations</span><span data-cn>被引次数</span></div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label"><span data-ko>저서</span><span data-en>Books</span><span data-cn>著作</span></div>
+      </div>
+      <div>
+        <div class="hero-stat-num">24</div>
+        <div class="hero-stat-label"><span data-ko>특허 (미국 5건)</span><span data-en>Patents (5 US)</span><span data-cn>专利（含5项美国）</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-card fu" style="transition-delay:.15s">
+    <div class="hc-label">Profile</div>
+    <h3>
+      <span data-ko>학계·산업·정부를 잇는<br>반도체 전략의 허브</span>
+      <span data-en>Where Semiconductor R&D<br>Meets Global Strategy</span>
+      <span data-cn>连接学术·产业·政府的<br>半导体战略枢纽</span>
+    </h3>
+    <ul class="hc-list">
+      <li><span class="lb">Position</span><span class="vl"><span data-ko>부교수 / 공과대학 부학장</span><span data-en>Assoc. Prof. / Assoc. Dean</span><span data-cn>副教授 / 工学院副院长</span></span></li>
+      <li><span class="lb">Affiliation</span><span class="vl">SKKU (Sungkyunkwan Univ.)</span></li>
+      <li><span class="lb">Education</span><span class="vl">MIT Ph.D. · SNU B.S./M.S.</span></li>
+      <li><span class="lb">Departments</span><span class="vl"><span data-ko>화학공학 · 반도체융합 · 미래에너지 · 양자정보</span><span data-en>ChemE · Semiconductor · Energy · Quantum</span><span data-cn>化工 · 半导体融合 · 未来能源 · 量子信息</span></span></li>
+      <li><span class="lb">Lab</span><span class="vl">SPMDL</span></li>
+    </ul>
+    <a href="https://scholar.google.com/citations?user=WkNo59sAAAAJ&hl=en" target="_blank" class="gs-badge" title="Google Scholar Profile">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+      Google Scholar — <span data-ko>피인용</span><span data-en>Cited by</span><span data-cn>被引</span> <strong>3,641</strong>
+    </a>
+    <div class="hc-links" style="margin-top:1rem">
+      <a href="https://scholar.google.com/citations?user=WkNo59sAAAAJ&hl=en" target="_blank">Google Scholar ↗</a>
+      <a href="https://sites.google.com/view/spmdl/home" target="_blank">SPMDL Lab ↗</a>
+      <a href="https://www.rand.org/pubs/research_reports/RRA2969-1.html" target="_blank">RAND Report ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== STRATEGY & CONSULTING ==================== -->
+<section id="strategy">
+<div class="si">
+  <div class="sl fu"><span data-ko>전략 컨설팅</span><span data-en>Strategic Consulting</span><span data-cn>战略咨询</span></div>
+  <h2 class="st fu"><span data-ko>글로벌 반도체 전략의 최전선</span><span data-en>At the Forefront of Global Semiconductor Strategy</span><span data-cn>全球半导体战略的最前线</span></h2>
+  <p class="ss fu">
+    <span data-ko>RAND Corporation, 최종현학술원, KDI, KCCI 등 국내외 주요 기관과 협업하며, Samsung Electronics, SK Hynix, Saudi Aramco, Corning, Barclays 등 글로벌 기업에 반도체·AI 전략을 자문합니다.</span>
+    <span data-en>Collaborating with RAND Corporation, CHEY Institute, KDI, and KCCI, while advising Samsung Electronics, SK Hynix, Saudi Aramco, Corning, and Barclays on semiconductor & AI strategy.</span>
+    <span data-cn>与RAND公司、崔钟贤学术院、KDI、KCCI等国内外主要机构合作，同时为三星电子、SK海力士、沙特阿美、康宁、巴克莱等全球企业提供半导体·AI战略咨询。</span>
+  </p>
+  <div class="cg">
+    <div class="cc fu"><div class="cc-flag">🇺🇸🇰🇷</div><div class="cc-org">CHEY Institute & RAND Corporation</div><h3><span data-ko>글로벌 반도체 공급망 안정성 및 경제안보 연구</span><span data-en>Global Semiconductor Supply Chain Stability & Economic Security</span><span data-cn>全球半导体供应链稳定性与经济安全研究</span></h3><p><span data-ko>미·중 패권 경쟁 속 한국의 반도체 정책 옵션 시뮬레이션. RAND 보고서로 출간.</span><span data-en>Policy game simulating Korea's semiconductor options amid US-China rivalry. Published as RAND report.</span><span data-cn>模拟美中竞争中韩国半导体政策选项的政策博弈，以RAND报告形式出版。</span></p><div class="cc-meta">2022–2023</div></div>
+    <div class="cc fu"><div class="cc-flag">🇰🇷🇬🇧</div><div class="cc-org">KDI & U.K. DSIT</div><h3><span data-ko>한·영 반도체, AI, 양자컴퓨터 협력 연구</span><span data-en>Korea-UK Bilateral Collaboration: Semiconductor, AI & Quantum</span><span data-cn>韩英半导体、AI、量子计算机合作研究</span></h3><p><span data-ko>한국개발연구원(KDI)과 영국 과학혁신기술부(DSIT) 공동 연구.</span><span data-en>Joint study between KDI and UK Dept. of Science, Innovation & Technology.</span><span data-cn>韩国开发研究院与英国科学创新技术部联合研究。</span></p><div class="cc-meta">2024–2025</div></div>
+    <div class="cc fu"><div class="cc-flag">🇰🇷</div><div class="cc-org">KCCI (대한상공회의소)</div><h3><span data-ko>AI 반도체 미래 방향 연구</span><span data-en>Future Direction of AI-Specific Semiconductors</span><span data-cn>AI半导体未来方向研究</span></h3><p><span data-ko>대한상공회의소와 AI 전용 반도체의 미래 방향 및 한국 산업 전략 공동 연구.</span><span data-en>Investigation on AI chip roadmap and Korea's industrial strategy with KCCI.</span><span data-cn>与大韩商工会议所共同研究AI芯片路线图与韩国产业战略。</span></p><div class="cc-meta">2024–2025</div></div>
+    <div class="cc fu"><div class="cc-flag">🇰🇷</div><div class="cc-org">KDB (한국산업은행)</div><h3><span data-ko>경제안보 시대의 글로벌 반도체 가치사슬 전략</span><span data-en>Semiconductor Value Chain Strategy in the Economic Security Era</span><span data-cn>经济安全时代的全球半导体价值链战略</span></h3><p><span data-ko>한국산업은행과 글로벌 반도체 공급망 전략 수립 연구.</span><span data-en>Strategy development for Korea's semiconductor supply chain with KDB.</span><span data-cn>与韩国产业银行合作制定韩国半导体供应链战略。</span></p><div class="cc-meta">2024</div></div>
+    <div class="cc fu"><div class="cc-flag">🇺🇸</div><div class="cc-org">Corning Glass</div><h3><span data-ko>반도체 유리 기판 기술 자문</span><span data-en>Semiconductor Glass Substrate Technology Advisory</span><span data-cn>半导体玻璃基板技术咨询</span></h3><p><span data-ko>차세대 반도체 패키징용 유리 기판 기술 전략 자문.</span><span data-en>Advising on next-gen glass substrate technology for semiconductor packaging.</span><span data-cn>为新一代半导体封装用玻璃基板技术提供战略咨询。</span></p><div class="cc-meta">2026–</div></div>
+    <div class="cc fu"><div class="cc-flag">🇬🇧🇯🇵</div><div class="cc-org">Barclays · Nomura · Baillie Gifford · Samsung Securities</div><h3><span data-ko>글로벌 금융기관 반도체·AI 산업 자문</span><span data-en>Semiconductor & AI Advisory for Global Financial Institutions</span><span data-cn>为全球金融机构提供半导体·AI产业咨询</span></h3><p><span data-ko>DRAM, HBM 시장 전망 및 AI 반도체 투자 전략 자문. 일본 METI 인력 양성 자문 포함.</span><span data-en>Advising on DRAM/HBM outlook and AI chip investment strategy. Includes METI (Japan) advisory.</span><span data-cn>提供DRAM、HBM市场展望及AI芯片投资战略咨询，包括日本经产省人才培养咨询。</span></p><div class="cc-meta">2023–2025</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== GOVERNMENT ADVISORY ==================== -->
+<section id="advisory" class="dark">
+<div class="si">
+  <div class="sl fu"><span data-ko>정부 자문</span><span data-en>Government Advisory</span><span data-cn>政府顾问</span></div>
+  <h2 class="st fu"><span data-ko>대한민국 반도체·기술 정책의 핵심 자문위원</span><span data-en>Key Advisor to Korea's Semiconductor & Technology Policy</span><span data-cn>韩国半导体·技术政策核心顾问</span></h2>
+  <p class="ss fu"><span data-ko>과학기술정보통신부, 외교부, 산업통상자원부 등 주요 정부 부처의 자문위원으로 국가 반도체·AI 전략 수립에 참여합니다.</span><span data-en>Serving as committee member for Korea's MSIT, MOFA, and MOTIE, contributing to national semiconductor and AI strategy.</span><span data-cn>作为韩国科学技术信息通信部、外交部、产业通商资源部的咨询委员，参与国家半导体·AI战略制定。</span></p>
+  <div class="gg">
+    <div class="gc fu"><div class="gc-icon">🏛️</div><h3><span data-ko>국가전략기술특별위원회</span><span data-en>National Strategic Technology Committee</span><span data-cn>国家战略技术特别委员会</span></h3><p><span data-ko>과학기술정보통신부(MSIT) 자문위원</span><span data-en>Committee Member, MSIT</span><span data-cn>科学技术信息通信部咨询委员</span></p><div class="yr">2022–present</div></div>
+    <div class="gc fu"><div class="gc-icon">🌐</div><h3><span data-ko>과학·외교 자문위원회</span><span data-en>Science & Foreign Affairs Committee</span><span data-cn>科学·外交咨询委员会</span></h3><p><span data-ko>MSIT · 외교부(MOFA) 합동 자문위원</span><span data-en>Joint Committee, MSIT & MOFA</span><span data-cn>MSIT与外交部联合咨询委员</span></p><div class="yr">2023–present</div></div>
+    <div class="gc fu"><div class="gc-icon">🔗</div><h3><span data-ko>공급망 안정화 위원회</span><span data-en>Supply Chain Stabilization Committee</span><span data-cn>供应链稳定化委员会</span></h3><p><span data-ko>산업통상자원부(MOTIE) 자문위원</span><span data-en>Committee Member, MOTIE</span><span data-cn>产业通商资源部咨询委员</span></p><div class="yr">2024–present</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== MEDIA & PRESS ==================== -->
+<section id="media">
+<div class="si">
+  <div class="sl fu"><span data-ko>미디어 · 언론</span><span data-en>Media & Press</span><span data-cn>媒体报道</span></div>
+  <h2 class="st fu"><span data-ko>국내외 주요 언론이 주목하는 반도체 전문가</span><span data-en>A Semiconductor Expert Featured in Global Media</span><span data-cn>备受国内外主要媒体关注的半导体专家</span></h2>
+  <p class="ss fu"><span data-ko>Bloomberg, Global Asia, Arirang TV 등 해외 매체와 KBS, SBS, 조선일보, 매일경제, 삼프로TV 등 국내 주요 언론에 기고 및 출연.</span><span data-en>Featured in Bloomberg, Global Asia, Arirang TV, as well as major Korean media: KBS, SBS, Chosunilbo, 3PRO TV, and more.</span><span data-cn>在Bloomberg、Global Asia、阿里郎电视台等海外媒体及KBS、SBS、朝鲜日报、每日经济、三Pro TV等韩国主要媒体发表评论与访谈。</span></p>
+  <div class="mg">
+    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Bloomberg — "How China Became a Threat to the US's Tech Leadership"</h3><p class="src">Bloomberg · Yahoo Finance</p><p class="dt">Oct 2022</p></div>
+    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Global Asia — "Opportunities Await If China Is Shut Out of Semiconductor Innovation"</h3><p class="src">Global Asia, Vol. 17 No. 4</p><p class="dt">Dec 2022</p></div>
+    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Arirang TV — "Implications of Chip 4 Alliance for S. Korea"</h3><p class="src">Arirang News (English broadcast)</p><p class="dt">2022</p></div>
+    <div class="mc fu"><span class="badge b-pol">POLICY</span><h3>RAND Corporation — Technology Innovation, Economic Growth, and Geopolitics: Policy Options for South Korea</h3><p class="src">RAND Research Report RR-A2969-1</p><p class="dt">2024</p></div>
+    <div class="mc fu"><span class="badge b-pol">POLICY</span><h3>Trade & Security — <span data-ko>미국 대선 이후 글로벌 반도체 가치사슬 변동 연구</span><span data-en>Global Semiconductor Value Chain After U.S. Election</span><span data-cn>美国大选后全球半导体价值链变动研究</span></h3><p class="src">Trade & Security, Vol. 8</p><p class="dt">2025</p></div>
+    <div class="mc fu"><span class="badge b-bc">BROADCAST</span><h3>SBS 그랜드 퀘스트 — <span data-ko>"옹스트롬 시대, 반도체 기술의 난제들"</span><span data-en>"Angstrom Era: Challenges in Semiconductor Technology"</span><span data-cn>"埃米时代，半导体技术的难题"</span></h3><p class="src">SBS TV</p><p class="dt">2024</p></div>
+    <div class="mc fu"><span class="badge b-bc">YOUTUBE</span><h3><span data-ko>삼프로TV (3PRO TV) — 글로벌 반도체 · AI 칩 전략 해설</span><span data-en>3PRO TV — Global Semiconductor & AI Chip Strategy</span><span data-cn>3PRO TV — 全球半导体·AI芯片战略解读</span></h3><p class="src">YouTube · 3PRO TV</p><p class="dt">2023–2025</p></div>
+    <div class="mc fu"><span class="badge b-bc">YOUTUBE</span><h3><span data-ko>과학을보다 (Seeing Science) — 과학 대중화 패널</span><span data-en>Seeing Science (과학을보다) — Science Communication</span><span data-cn>科学を見る — 科学传播节目</span></h3><p class="src">YouTube · BODA</p><p class="dt">Regular</p></div>
+    <div class="mc fu"><span class="badge b-col">COLUMN</span><h3><span data-ko>피렌체의 식탁 — "권석준의 기술과 사회" 연재 칼럼</span><span data-en>Firenze Table — "Technology & Society" Column Series</span><span data-cn>佛罗伦萨餐桌 — "技术与社会"连载专栏</span></h3><p class="src"><span data-ko>피렌체의 식탁 (Medici Media)</span><span data-en>Firenze Table (Medici Media)</span><span data-cn>Medici Media</span></p><p class="dt">2023–present</p></div>
+    <div class="mc fu"><span class="badge b-dom">DOMESTIC</span><h3><span data-ko>이코노미조선 — "대만 벤치마킹해 'K-반도체·AI 혁신 패키지' 신속 추진해야"</span><span data-en>Economy Chosun — "Korea Needs K-Semiconductor·AI Innovation Package"</span><span data-cn>经济朝鲜 — "应借鉴台湾，迅速推进K-半导体·AI创新方案"</span></h3><p class="src"><span data-ko>이코노미조선</span><span data-en>Economy Chosun</span><span data-cn>经济朝鲜</span></p><p class="dt">Jun 2025</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== BOOKS ==================== -->
+<section id="books" class="alt-bg">
+<div class="si">
+  <div class="sl fu"><span data-ko>저서</span><span data-en>Books</span><span data-cn>著作</span></div>
+  <h2 class="st fu"><span data-ko>기술과 전략을 잇는 저술 활동</span><span data-en>Writings that Bridge Technology and Strategy</span><span data-cn>连接技术与战略的著述</span></h2>
+  <p class="ss fu"><span data-ko>반도체 산업 전략서 4권을 포함한 5권의 저서. 베스트셀러 『반도체 삼국지』, 2024 세종도서 학술부문 선정 『차세대 반도체』.</span><span data-en>Author of 5 books including 4 on semiconductor strategy. Bestseller "Three Kingdoms of Semiconductor" and 2024 Sejong Book Award winner "Next Generation Semiconductor."</span><span data-cn>著有5部作品，其中4部聚焦半导体产业战略。畅销书《半导体三国志》及2024年世宗图书学术奖获奖作品《新一代半导体》。</span></p>
+  <div class="bg-grid">
+    <div class="bc fu"><div class="bc-em">📘</div><h3><span data-ko>반도체 삼국지</span><span data-en>Three Kingdoms of Semiconductor</span><span data-cn>半导体三国志</span></h3><div class="bsub"><span data-ko>뿌리와이파리, 2022 · 단독 저서</span><span data-en>Bburiwa Ipari, 2022 · Solo Author</span><span data-cn>뿌리와이파리出版, 2022 · 独著</span></div><p><span data-ko>한·중·일 반도체 산업의 현황, 역사, 미래 구도를 기술전략적 관점에서 분석.</span><span data-en>Strategic analysis of Korea-China-Japan semiconductor dynamics.</span><span data-cn>从技术战略视角分析韩中日半导体产业的现状、历史与未来格局。</span></p><span class="bt bt-best"><span data-ko>베스트셀러</span><span data-en>Bestseller</span><span data-cn>畅销书</span></span></div>
+    <div class="bc fu"><div class="bc-em">📗</div><h3><span data-ko>차세대 반도체</span><span data-en>Next Generation Semiconductor</span><span data-cn>新一代半导体</span></h3><div class="bsub"><span data-ko>플루토, 2023 · 공저 (석민구, 신창환)</span><span data-en>Pluto, 2023 · Co-authored</span><span data-cn>Pluto出版, 2023 · 合著</span></div><p><span data-ko>최종현학술원 웨비나 기반 차세대 반도체 기술·전략 종합서. 2024 세종도서 학술부문 선정.</span><span data-en>Comprehensive work on next-gen semiconductor tech & strategy. 2024 Sejong Book Award (Academic).</span><span data-cn>基于崔钟贤学术院研讨会的新一代半导体技术·战略综合著作。2024年世宗图书学术奖。</span></p><span class="bt bt-sj"><span data-ko>세종도서 선정</span><span data-en>Sejong Award</span><span data-cn>世宗图书奖</span></span></div>
+    <div class="bc fu"><div class="bc-em">📕</div><h3><span data-ko>미중 관계 레볼루션</span><span data-en>Revolution of the US-China Relation</span><span data-cn>美中关系革命</span></h3><div class="bsub"><span data-ko>2025 · 공저</span><span data-en>2025 · Co-authored</span><span data-cn>2025 · 合著</span></div><p><span data-ko>미·중 기술 패권 경쟁의 구조적 분석과 한국의 전략적 포지셔닝.</span><span data-en>Structural analysis of US-China tech rivalry and Korea's strategic positioning.</span><span data-cn>美中技术霸权竞争的结构性分析与韩国的战略定位。</span></p><span class="bt bt-new"><span data-ko>최신작</span><span data-en>Latest</span><span data-cn>最新</span></span></div>
+    <div class="bc fu"><div class="bc-em">📙</div><h3><span data-ko>호기심과 끈기 / 번역서 외</span><span data-en>Curiosity & Perseverance / Others</span><span data-cn>好奇心与毅力 / 译著等</span></h3><div class="bsub">2006, 2022</div><p><span data-ko>전자책 『호기심과 끈기』(2022), 번역서 『석유시대의 종말(Out of Gas)』(2006).</span><span data-en>E-book "Curiosity & Perseverance" (2022), translation of "Out of Gas" (2006).</span><span data-cn>电子书《好奇心与毅力》(2022)，译著《石油时代的终结》(2006)。</span></p></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== RESEARCH ==================== -->
+<section id="research" class="dark">
+<div class="si">
+  <div class="sl fu"><span data-ko>연구 분야</span><span data-en>Research Areas</span><span data-cn>研究领域</span></div>
+  <h2 class="st fu"><span data-ko>연구 — SPMDL (Smart Process & Materials Design Lab)</span><span data-en>Research — SPMDL (Smart Process & Materials Design Lab)</span><span data-cn>研究 — SPMDL（智能工艺与材料设计实验室）</span></h2>
+  <p class="ss fu"><span data-ko>Samsung Electronics, SK Hynix, Saudi Aramco 등이 지원하는 연구 프로젝트와 정부(MSIT, MOTIE) 과제를 수행합니다.</span><span data-en>Research funded by Samsung Electronics, SK Hynix, Saudi Aramco, and Korean government (MSIT, MOTIE).</span><span data-cn>承担三星电子、SK海力士、沙特阿美及韩国政府（MSIT、MOTIE）资助的研究项目。</span></p>
+  <div class="rg">
+    <div class="rc fu"><div class="rc-n">01</div><h3><span data-ko>차세대 반도체 소재·공정</span><span data-en>Next-Gen Semiconductor Materials & Process</span><span data-cn>新一代半导体材料与工艺</span></h3><p>EUV PR, Etching, CVD, ALD, ALE, Advanced Packaging</p></div>
+    <div class="rc fu"><div class="rc-n">02</div><h3><span data-ko>광 컴퓨팅 · 플라즈모닉스</span><span data-en>Optical Computing & Plasmonics</span><span data-cn>光计算与等离子体光子学</span></h3><p>Plasmonics, Optoelectronics, Photonic Devices, Metamaterials</p></div>
+    <div class="rc fu"><div class="rc-n">03</div><h3><span data-ko>신재생 에너지 소재 전산설계</span><span data-en>Computational Design of Energy Materials</span><span data-cn>可再生能源材料计算设计</span></h3><p>Perovskite Solar Cells, Electrochemical CO₂ Reduction</p></div>
+    <div class="rc fu"><div class="rc-n">04</div><h3><span data-ko>물리적 복제 불가 함수 (PUF)</span><span data-en>Physically Unclonable Functions (PUF)</span><span data-cn>物理不可克隆函数（PUF）</span></h3><p>Random Media Modeling, True Random Number Generators</p></div>
+    <div class="rc fu"><div class="rc-n">05</div><h3><span data-ko>AI 기반 소재·공정 최적화</span><span data-en>AI-Powered Materials Optimization</span><span data-cn>AI驱动的材料·工艺优化</span></h3><p>Physics-Informed Neural Networks (PINN), ML Fault Detection</p></div>
+    <div class="rc fu"><div class="rc-n">06</div><h3><span data-ko>첨단기술 산업 전략 개발</span><span data-en>Advanced Technology Industry Strategy</span><span data-cn>先进技术产业战略</span></h3><p>Semiconductor, AI, Energy, Quantum Computing Policy</p></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== PUBLICATIONS ==================== -->
+<section id="publications">
+<div class="si">
+  <div class="sl fu"><span data-ko>대표 논문</span><span data-en>Selected Publications</span><span data-cn>代表性论文</span></div>
+  <h2 class="st fu"><span data-ko>90편 이상의 국제 학술지 논문</span><span data-en>90+ Papers in Peer-Reviewed Journals</span><span data-cn>90余篇国际同行评审期刊论文</span></h2>
+  <p class="ss fu"><span data-ko>Science, Nature Electronics, Science Advances, Advanced Materials, JACS, Joule 등 최상위 저널에 주저자·교신저자로 게재.</span><span data-en>Leading/corresponding author publications in Science, Nature Electronics, Science Advances, Advanced Materials, JACS, Joule, and more.</span><span data-cn>以第一作者或通讯作者在Science、Nature Electronics、Science Advances、Advanced Materials、JACS、Joule等顶级期刊发表论文。</span></p>
+  <div class="pl">
+    <div class="pi fu">
+      <div class="pj">Science</div>
+      <div class="pt">Unveiling facet-dependent degradation and facet engineering for stable perovskite solar cells <em>— Ma, Eickemeyer, Lee, Kang, <strong>S. J. Kwon*</strong>, Grätzel*, Park*</em></div>
+      <div class="py">2023</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Science Advances</div>
+      <div class="pt">Reconfigurable Physically Unclonable Functions Using Quantum Materials and Effects via Shuffling Algorithms <em>— Ahn, Park, Kang, Im, Seo, <strong>S. J. Kwon*</strong>, Oh*</em></div>
+      <div class="py">2025</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Nature Electronics</div>
+      <div class="pt">Nanoscale Physical Unclonable Function by Block Copolymer Self-Assembly <em>— Kim, Jeon, In, Nam, ..., <strong>S. J. Kwon*</strong>, Kim*, Kim*</em></div>
+      <div class="py">2022</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Advanced Materials</div>
+      <div class="pt">Stochastically Broken Inversion Symmetry of Van der Waals Topological Insulator for Nanoscale Physically Unclonable Functions <em>— Kim et al., <strong>S. J. Kwon*</strong>, Kim*</em></div>
+      <div class="py">2025</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Advanced Materials <span class="pb">Front Cover</span></div>
+      <div class="pt">Proximal High-Index Metamaterials based on a Superlattice of Gold Nanohexagons Targeting the Near-Infrared Band <em>— Shin, Kim, Lim, Kang, <strong>S. J. Kwon*</strong>, Park*, Yi*</em></div>
+      <div class="py">2024</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Advanced Energy Materials <span class="pb">Front Cover</span></div>
+      <div class="pt">Computational design of optimized modular photovoltaic electrochemical reactor for energy efficient CO₂-to-Cₙ reduction reaction <em>— <strong>S. J. Kwon*</strong></em></div>
+      <div class="py">2024</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Journal of the American Chemical Society</div>
+      <div class="pt">Passivation principle for efficient perovskite solar cells <em>— Ma, Kang, Lee, Zhang, ..., <strong>S. J. Kwon*</strong>, Yang*, Yang*, Park*</em></div>
+      <div class="py">2023</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Joule</div>
+      <div class="pt">Photovoltaically top-performing perovskite crystal facets <em>— Ma, Kang, Lee, <strong>S. J. Kwon*</strong>, Cha, Yang*, Park*</em></div>
+      <div class="py">2022</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Advanced Materials <span class="pb">Front Cover</span></div>
+      <div class="pt">A plasmonic platform with disordered array of metal nanoparticles for three-order enhanced upconversion luminescence and highly-sensitive NIR photodetector <em>— <strong>S. J. Kwon*</strong>, Lee, Jung, Jang, Park, Han, Ko*</em></div>
+      <div class="py">2016</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Nature Communications</div>
+      <div class="pt">Long-term efficient organic photovoltaics based on quaternary bulk heterojunction <em>— Nam, Cha, ..., <strong>S. J. Kwon*</strong>, Ko*</em></div>
+      <div class="py">2017</div>
+    </div>
+    <div class="pi fu">
+      <div class="pj">Science Advances</div>
+      <div class="pt">Shear-Solvo Defect Annihilation of Diblock Copolymer Thin Films over Large Area <em>— Kim, Shin, Hur*, <strong>S. J. Kwon*</strong>, Kim*</em></div>
+      <div class="py">2019</div>
+    </div>
+  </div>
+  <p style="margin-top:2rem;font-size:.82rem;color:var(--txt-m);">
+    <span data-ko>* 교신저자 표시. 전체 논문 목록: </span>
+    <span data-en>* Corresponding author. Full list: </span>
+    <span data-cn>* 通讯作者。完整论文列表：</span>
+    <a href="https://scholar.google.com/citations?user=WkNo59sAAAAJ&hl=en" target="_blank" style="color:var(--acc)">Google Scholar ↗</a>
+  </p>
+</div>
+</section>
+
+<!-- ==================== CAREER TIMELINE ==================== -->
+<section id="career" class="alt-bg">
+<div class="si">
+  <div class="sl fu"><span data-ko>경력</span><span data-en>Career</span><span data-cn>履历</span></div>
+  <h2 class="st fu">SNU → MIT → KIST → SKKU</h2>
+  <div class="tl">
+    <div class="ti fu"><div class="ty">2025–present</div><div class="tt"><span data-ko>성균관대학교 공과대학 부학장</span><span data-en>Associate Dean, School of Engineering, SKKU</span><span data-cn>成均馆大学工学院副院长</span></div></div>
+    <div class="ti fu"><div class="ty">2024–present</div><div class="tt"><span data-ko>성균관대학교 부교수</span><span data-en>Associate Professor, SKKU</span><span data-cn>成均馆大学副教授</span></div><div class="td"><span data-ko>화학공학부, 반도체융합공학과, 미래에너지공학과, SIEST, 양자정보공학과</span><span data-en>School of ChemE, Semiconductor Conv. Eng., Future Energy Eng., SIEST, Quantum Info. Eng.</span><span data-cn>化工学部、半导体融合工学科、未来能源工学科、SIEST、量子信息工学科</span></div></div>
+    <div class="ti fu"><div class="ty">2021–2024</div><div class="tt"><span data-ko>성균관대학교 조교수</span><span data-en>Assistant Professor, SKKU</span><span data-cn>成均馆大学助理教授</span></div></div>
+    <div class="ti fu"><div class="ty">2019–2021</div><div class="tt"><span data-ko>한국과학기술연구원(KIST) 책임연구원</span><span data-en>Principal Research Scientist, KIST</span><span data-cn>韩国科学技术研究院首席研究员</span></div><div class="td"><span data-ko>나노포토닉스연구센터 / UST 부교수 겸직</span><span data-en>Center for Nanophotonics / UST Assoc. Prof.</span><span data-cn>纳米光子学研究中心 / UST副教授兼任</span></div></div>
+    <div class="ti fu"><div class="ty">2014–2019</div><div class="tt"><span data-ko>KIST 선임연구원</span><span data-en>Senior Research Scientist, KIST</span><span data-cn>KIST高级研究员</span></div></div>
+    <div class="ti fu"><div class="ty">2008–2013</div><div class="tt"><span data-ko>MIT 화학공학과 Ph.D.</span><span data-en>Ph.D. in Chemical Engineering, MIT</span><span data-cn>MIT化学工程博士</span></div><div class="td">Advisor: Prof. T. Alan Hatton · Minor: Materials Science & Engineering</div></div>
+    <div class="ti fu"><div class="ty">2004–2008</div><div class="tt"><span data-ko>KIST 연구원</span><span data-en>Research Scientist, KIST</span><span data-cn>KIST研究员</span></div></div>
+    <div class="ti fu"><div class="ty">1998–2004</div><div class="tt"><span data-ko>서울대학교 화학생물공학부 학사 (Magna Cum Laude) · 석사</span><span data-en>B.S. (Magna Cum Laude) & M.S. — Chemical Engineering, SNU</span><span data-cn>首尔大学化学生物工学学士（优等）· 硕士</span></div><div class="td"><span data-ko>부전공: 물리학</span><span data-en>Minor: Physics</span><span data-cn>辅修：物理学</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+<div class="si">
+  <div class="sl fu"><span data-ko>연락처</span><span data-en>Contact</span><span data-cn>联系方式</span></div>
+  <h2 class="st fu"><span data-ko>연락 및 외부 링크</span><span data-en>Contact & Links</span><span data-cn>联系方式与外部链接</span></h2>
+  <div class="ctg fu" style="margin-top:2rem">
+    <div>
+      <div class="cti"><div class="ct-icon">✉️</div><div><div class="lb">Email</div><div class="vl"><a href="/cdn-cgi/l/email-protection#74071e1b1b1a1f031b1a34071f1f015a111001"><span class="__cf_email__" data-cfemail="7d0e17121213160a12133d0e16160853181908">[email&#160;protected]</span></a></div></div></div>
+      <div class="cti"><div class="ct-icon">📍</div><div><div class="lb">Office</div><div class="vl"><span data-ko>경기도 수원시 장안구 서부로 2066 성균관대학교 자연과학캠퍼스 제2공학관 25303B</span><span data-en>Rm. 25303B, 2066 Seobu-Ro, Jangan-Gu, Suwon 16417, South Korea</span><span data-cn>韩国京畿道水原市长安区西部路2066 成均馆大学自然科学校区第二工学馆25303B</span></div></div></div>
+      <div class="cti"><div class="ct-icon">📞</div><div><div class="lb">Phone</div><div class="vl">+82-31-290-7281 (Office)</div></div></div>
+      <div class="cti"><div class="ct-icon">🔬</div><div><div class="lb">Lab</div><div class="vl">Smart Process & Materials Design Lab (SPMDL)</div></div></div>
+    </div>
+    <div>
+      <h3 style="font-size:.95rem;font-weight:600;margin-bottom:1.25rem"><span data-ko>외부 링크</span><span data-en>External Links</span><span data-cn>外部链接</span></h3>
+      <div class="ct-links">
+        <a class="ct-link" href="https://scholar.google.com/citations?user=WkNo59sAAAAJ&hl=en" target="_blank">📊 Google Scholar</a>
+        <a class="ct-link" href="https://sites.google.com/view/spmdl/home" target="_blank">🔬 SPMDL Lab</a>
+        <a class="ct-link" href="https://www.rand.org/pubs/research_reports/RRA2969-1.html" target="_blank">📄 RAND Report</a>
+        <a class="ct-link" href="https://www.globalasia.org/v17no4/focus/opportunities-await-if-china-is-shut-out-of-semiconductor-innovation_seok-joon-kwon" target="_blank">🌏 Global Asia</a>
+        <a class="ct-link" href="https://www.youtube.com/@UCQxFBTiTvWBROdy5RQmSJ3Q" target="_blank">🎬 YouTube</a>
+        <a class="ct-link" href="http://www.firenzedt.com/news/articleView.html?idxno=26439" target="_blank">✍️ <span data-ko>피렌체의 식탁</span><span data-en>Firenze Table</span><span data-cn>佛罗伦萨餐桌</span></a>
+        <a class="ct-link" href="https://store.kyobobook.co.kr/person/detail/1116109901" target="_blank">📚 <span data-ko>교보문고 저자</span><span data-en>Kyobo Author</span><span data-cn>教保文库作者</span></a>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.82rem;color:var(--txt2);line-height:1.7">
+        <span data-ko>전략 컨설팅, 강연, 미디어 출연 문의는 이메일로 연락 부탁드립니다.</span>
+        <span data-en>For inquiries on consulting, lectures, or media, please contact via email.</span>
+        <span data-cn>如需战略咨询、演讲或媒体相关事宜，请通过邮件联系。</span>
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>© 2026 Seokjoon Kwon (S. Joon Kwon), Ph.D. · 권석준 · 权锡俊</p>
+  <p style="margin-top:.5rem"><a href="/cdn-cgi/l/email-protection#d4a7bebbbbbabfa3bbba94a7bfbfa1fab1b0a1"><span class="__cf_email__" data-cfemail="5c2f36333332372b33321c2f37372972393829">[email&#160;protected]</span></a> · Sungkyunkwan University</p>
+</footer>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Trilingual switching
+function setLang(lang) {
+  document.body.className = lang === 'ko' ? '' : lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+// Scroll effects
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.get
