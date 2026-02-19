@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>권석준 Seokjoon Kwon — Semiconductor Strategist & Scholar</title>
 <meta name="description" content="Seokjoon Kwon (S. Joon Kwon), Ph.D. — Associate Professor & Associate Dean at SKKU. Semiconductor strategist, policy advisor, bestselling author.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sjoonkwon.com/">
+<meta property="og:title" content="권석준 Seokjoon Kwon — Semiconductor Strategist & Scholar">
+<meta property="og:description" content="Associate Professor & Associate Dean at SKKU. Semiconductor engineer, industry strategist, policy advisor, and bestselling author.">
+<meta property="og:image" content="https://sjoonkwon.com/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://sjoonkwon.com/">
+<meta property="twitter:title" content="권석준 Seokjoon Kwon — Semiconductor Strategist & Scholar">
+<meta property="twitter:description" content="Associate Professor & Associate Dean at SKKU. Semiconductor engineer, industry strategist, policy advisor, and bestselling author.">
+<meta property="twitter:image" content="https://sjoonkwon.com/og-image.jpg">
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,24 +57,25 @@ body.cn{font-family:'Noto Sans SC','DM Sans',sans-serif}
 body.cn .section-title,body.cn .hero-name-kr{font-family:var(--fc)}
 
 /* === NAV === */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,3rem);background:rgba(250,249,246,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--bdr);transition:all .3s}
-nav.scrolled{box-shadow:var(--sh-s)}
-.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--txt);text-decoration:none;letter-spacing:-.02em}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,4vw,3rem);background:rgba(250,249,246,.92);backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--bdr);transition:all .3s cubic-bezier(0.4,0,0.2,1)}
+nav.scrolled{box-shadow:var(--sh-s);background:rgba(250,249,246,.95)}
+.nav-logo{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--txt);text-decoration:none;letter-spacing:-.02em;transition:color .2s}
+.nav-logo:hover{color:var(--acc)}
 .nav-logo span{color:var(--acc)}
 .nav-links{display:flex;gap:.25rem;align-items:center}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--txt2);text-decoration:none;padding:.4rem .75rem;border-radius:var(--r);transition:all .2s}
-.nav-links a:hover{color:var(--txt);background:rgba(0,0,0,.04)}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--txt2);text-decoration:none;padding:.4rem .75rem;border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.nav-links a:hover{color:var(--txt);background:rgba(184,134,11,.08);transform:translateY(-1px)}
 .lang-group{display:flex;gap:2px;margin-left:.75rem}
-.lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:.3rem .6rem;border:1.5px solid var(--bdr);border-radius:0;background:none;cursor:pointer;color:var(--txt2);transition:all .2s}
+.lang-btn{font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:.3rem .6rem;border:1.5px solid var(--bdr);border-radius:0;background:none;cursor:pointer;color:var(--txt2);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
 .lang-btn:first-child{border-radius:100px 0 0 100px}
 .lang-btn:last-child{border-radius:0 100px 100px 0}
-.lang-btn.active{background:var(--txt);color:var(--bg);border-color:var(--txt)}
+.lang-btn.active{background:var(--txt);color:var(--bg);border-color:var(--txt);transform:translateY(-1px)}
 .nav-mob{display:none;background:none;border:none;cursor:pointer;padding:.5rem}
-.nav-mob svg{width:22px;height:22px;stroke:var(--txt)}
+.nav-mob svg{width:22px;height:22px;stroke:var(--txt);transition:stroke .2s}
 
 /* === HERO === */
 .hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav) + 3rem) clamp(1.5rem,4vw,3rem) 4rem;position:relative}
-.hero::after{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(184,134,11,.03) 100%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(184,134,11,.04) 100%);pointer-events:none}
 .hero-inner{max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
 .hero-text{max-width:560px}
 .hero-label{font-family:var(--fm);font-size:.7rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
@@ -70,15 +86,15 @@ nav.scrolled{box-shadow:var(--sh-s)}
 .hero-title{font-size:1.02rem;color:var(--txt2);line-height:1.8;margin-bottom:2rem}
 .hero-title strong{color:var(--txt);font-weight:600}
 .hero-roles{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
-.role-chip{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:.35rem .85rem;border-radius:100px;border:1px solid var(--bdr);color:var(--txt2);background:var(--bg-card);transition:all .2s}
-.role-chip:hover{border-color:var(--acc);color:var(--acc)}
+.role-chip{font-size:.72rem;font-weight:600;letter-spacing:.02em;padding:.35rem .85rem;border-radius:100px;border:1px solid var(--bdr);color:var(--txt2);background:var(--bg-card);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.role-chip:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-1px)}
 .role-chip.ac{background:var(--acc);color:#fff;border-color:var(--acc)}
 .hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--bdr)}
 .hero-stat-num{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--txt);line-height:1}
 .hero-stat-label{font-size:.72rem;color:var(--txt-m);margin-top:.3rem;font-weight:500}
 
 /* Hero card */
-.hero-card{background:var(--bg-dark);color:var(--txt-l);border-radius:var(--rl);padding:2.5rem;position:relative;overflow:hidden}
+.hero-card{background:var(--bg-dark);color:var(--txt-l);border-radius:var(--rl);padding:2.5rem;position:relative;overflow:hidden;box-shadow:var(--sh-m)}
 .hero-card::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.15),transparent 70%)}
 .hc-label{font-family:var(--fm);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--acc-l);margin-bottom:1.5rem}
 .hero-card h3{font-family:var(--fd);font-size:1.45rem;font-weight:600;margin-bottom:1.5rem;line-height:1.3}
@@ -88,12 +104,12 @@ nav.scrolled{box-shadow:var(--sh-s)}
 .hc-list .lb{color:rgba(255,255,255,.5);font-size:.78rem;flex-shrink:0}
 .hc-list .vl{color:var(--txt-l);font-weight:500;text-align:right}
 .hc-links{display:flex;gap:.5rem;margin-top:1.5rem;flex-wrap:wrap}
-.hc-links a{font-size:.72rem;font-weight:600;color:var(--acc-l);text-decoration:none;padding:.3rem .7rem;border:1px solid rgba(184,134,11,.3);border-radius:100px;transition:all .2s}
-.hc-links a:hover{background:rgba(184,134,11,.15);border-color:var(--acc-l)}
+.hc-links a{font-size:.72rem;font-weight:600;color:var(--acc-l);text-decoration:none;padding:.3rem .7rem;border:1px solid rgba(184,134,11,.3);border-radius:100px;transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.hc-links a:hover{background:rgba(184,134,11,.15);border-color:var(--acc-l);transform:translateY(-1px)}
 
 /* Google Scholar live badge */
-.gs-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);border-radius:100px;padding:.25rem .7rem;font-size:.7rem;font-weight:600;color:#4285f4;margin-top:.75rem;text-decoration:none;transition:all .2s}
-.gs-badge:hover{background:rgba(66,133,244,.2)}
+.gs-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);border-radius:100px;padding:.25rem .7rem;font-size:.7rem;font-weight:600;color:#4285f4;margin-top:.75rem;text-decoration:none;transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.gs-badge:hover{background:rgba(66,133,244,.2);transform:translateY(-1px)}
 .gs-badge svg{width:14px;height:14px}
 
 /* === SECTIONS === */
@@ -110,8 +126,8 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 
 /* === CONSULTING GRID === */
 .cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
-.cc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;transition:all .3s;position:relative}
-.cc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.cc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;transition:all .3s cubic-bezier(0.4,0,0.2,1);position:relative;box-shadow:var(--sh-s)}
+.cc:hover{box-shadow:var(--sh-m);transform:translateY(-4px)}
 .cc-org{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:.75rem}
 .cc h3{font-size:.95rem;font-weight:600;margin-bottom:.5rem;line-height:1.5}
 .cc p{font-size:.82rem;color:var(--txt2);line-height:1.6}
@@ -120,8 +136,8 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 
 /* === GOV GRID === */
 .gg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.gc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:2rem;transition:all .3s}
-.gc:hover{border-color:var(--acc)}
+.gc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:2rem;transition:all .3s cubic-bezier(0.4,0,0.2,1)}
+.gc:hover{border-color:var(--acc);transform:translateY(-2px)}
 .gc-icon{width:40px;height:40px;border-radius:50%;background:rgba(184,134,11,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
 .gc h3{font-size:.9rem;font-weight:600;margin-bottom:.5rem;color:var(--txt-l)}
 .gc p{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.6}
@@ -129,18 +145,18 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 
 /* === MEDIA GRID === */
 .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-.mc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:1.75rem;transition:all .3s;text-decoration:none;color:inherit;display:block}
-.mc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.mc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:1.75rem;transition:all .3s cubic-bezier(0.4,0,0.2,1);text-decoration:none;color:inherit;display:block;box-shadow:var(--sh-s)}
+.mc:hover{box-shadow:var(--sh-m);transform:translateY(-3px)}
 .badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;margin-bottom:.75rem}
-.b-intl{background:#dbeafe;color:#1e40af}.b-dom{background:#fef3c7;color:#92400e}.b-bc{background:#ede9fe;color:#6d28d9}.b-col{background:#d1fae5;color:#065f46}.b-pol{background:#fce7f3;color:#9d174d}
+.b-tv{background:#dbeafe;color:#1e40af}.b-youtube{background:#fef3c7;color:#92400e}.b-column{background:#ede9fe;color:#6d28d9}.b-interview{background:#d1fae5;color:#065f46}.b-policy{background:#fce7f3;color:#9d174d}
 .mc h3{font-size:.9rem;font-weight:600;margin-bottom:.4rem;line-height:1.5}
 .mc .src{font-size:.75rem;color:var(--txt-m);font-weight:500}
 .mc .dt{font-size:.72rem;color:var(--txt-m)}
 
 /* === BOOKS GRID === */
 .bg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.bc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;text-align:center;transition:all .3s}
-.bc:hover{box-shadow:var(--sh-m);transform:translateY(-2px)}
+.bc{background:var(--bg-card);border:1px solid var(--bdr);border-radius:var(--rl);padding:2rem;text-align:center;transition:all .3s cubic-bezier(0.4,0,0.2,1);box-shadow:var(--sh-s)}
+.bc:hover{box-shadow:var(--sh-m);transform:translateY(-3px)}
 .bc-em{font-size:3rem;margin-bottom:1rem}
 .bc h3{font-size:1rem;font-weight:700;margin-bottom:.3rem}
 .bc .bsub{font-size:.78rem;color:var(--txt-m);margin-bottom:.75rem}
@@ -150,8 +166,8 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 
 /* === RESEARCH GRID === */
 .rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
-.rc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:1.75rem;transition:all .3s}
-.rc:hover{border-color:rgba(184,134,11,.4)}
+.rc{background:var(--bg-card-dark);border:1px solid var(--bdr-d);border-radius:var(--rl);padding:1.75rem;transition:all .3s cubic-bezier(0.4,0,0.2,1)}
+.rc:hover{border-color:rgba(184,134,11,.4);transform:translateY(-2px)}
 .rc-n{font-family:var(--fm);font-size:.65rem;color:var(--acc-l);margin-bottom:.75rem}
 .rc h3{font-size:.95rem;font-weight:600;color:var(--txt-l);margin-bottom:.5rem;line-height:1.4}
 .rc p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
@@ -181,15 +197,16 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 .ct-icon{width:36px;height:36px;border-radius:50%;background:rgba(184,134,11,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
 .cti .lb{font-size:.72rem;color:var(--txt-m);font-weight:500}
 .cti .vl{font-size:.9rem;font-weight:500}
-.cti a{color:var(--txt);text-decoration:none}
+.cti a{color:var(--txt);text-decoration:none;transition:color .2s}
 .cti a:hover{color:var(--acc)}
 .ct-links{display:flex;flex-wrap:wrap;gap:.75rem}
-.ct-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;color:var(--txt);text-decoration:none;padding:.6rem 1.2rem;border:1px solid var(--bdr);border-radius:var(--r);transition:all .2s}
-.ct-link:hover{border-color:var(--acc);color:var(--acc);background:rgba(184,134,11,.04)}
+.ct-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;color:var(--txt);text-decoration:none;padding:.6rem 1.2rem;border:1px solid var(--bdr);border-radius:var(--r);transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+.ct-link:hover{border-color:var(--acc);color:var(--acc);background:rgba(184,134,11,.04);transform:translateY(-1px)}
 
 /* === FOOTER === */
 footer{background:var(--bg-dark);color:rgba(255,255,255,.4);padding:3rem clamp(1.5rem,4vw,3rem);text-align:center;font-size:.78rem}
-footer a{color:var(--acc-l);text-decoration:none}
+footer a{color:var(--acc-l);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--acc)}
 
 /* === ANIMATIONS === */
 .fu{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
@@ -268,20 +285,20 @@ footer a{color:var(--acc-l);text-decoration:none}
     </div>
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num" id="statPapers">90+</div>
-        <div class="hero-stat-label"><span data-ko>SCI 논문</span><span data-en>SCI Papers</span><span data-cn>SCI论文</span></div>
-      </div>
-      <div>
-        <div class="hero-stat-num" id="statCitations">3,641</div>
-        <div class="hero-stat-label"><span data-ko>피인용 수</span><span data-en>Citations</span><span data-cn>被引次数</span></div>
-      </div>
-      <div>
         <div class="hero-stat-num">5</div>
         <div class="hero-stat-label"><span data-ko>저서</span><span data-en>Books</span><span data-cn>著作</span></div>
       </div>
       <div>
         <div class="hero-stat-num">24</div>
         <div class="hero-stat-label"><span data-ko>특허 (미국 5건)</span><span data-en>Patents (5 US)</span><span data-cn>专利（含5项美国）</span></div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label"><span data-ko>정부자문 부처</span><span data-en>Gov. Advisory Depts.</span><span data-cn>政府咨询部门</span></div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100+</div>
+        <div class="hero-stat-label"><span data-ko>미디어 출연</span><span data-en>Media Appearances</span><span data-cn>媒体出演</span></div>
       </div>
     </div>
   </div>
@@ -353,18 +370,118 @@ footer a{color:var(--acc-l);text-decoration:none}
 <div class="si">
   <div class="sl fu"><span data-ko>미디어 · 언론</span><span data-en>Media & Press</span><span data-cn>媒体报道</span></div>
   <h2 class="st fu"><span data-ko>국내외 주요 언론이 주목하는 반도체 전문가</span><span data-en>A Semiconductor Expert Featured in Global Media</span><span data-cn>备受国内外主要媒体关注的半导体专家</span></h2>
-  <p class="ss fu"><span data-ko>Bloomberg, Global Asia, Arirang TV 등 해외 매체와 KBS, SBS, 조선일보, 매일경제, 삼프로TV 등 국내 주요 언론에 기고 및 출연.</span><span data-en>Featured in Bloomberg, Global Asia, Arirang TV, as well as major Korean media: KBS, SBS, Chosunilbo, 3PRO TV, and more.</span><span data-cn>在Bloomberg、Global Asia、阿里郎电视台等海外媒体及KBS、SBS、朝鲜日报、每日经济、三Pro TV等韩国主要媒体发表评论与访谈。</span></p>
+  <p class="ss fu"><span data-ko>KBS, SBS 다큐멘터리부터 삼프로TV, 과학을보다 등 유튜브 채널, 한국일보 칼럼, 그리고 Bloomberg, Global Asia 등 해외 매체까지 — 반도체·AI·에너지 분야의 폭넓은 미디어 활동.</span><span data-en>From KBS and SBS documentaries to YouTube channels like 3PRO TV and Seeing Science, Hankook Ilbo columns, and international media including Bloomberg and Global Asia — extensive media presence in semiconductor, AI, and energy sectors.</span><span data-cn>从KBS、SBS纪录片到3PRO TV、Seeing Science等YouTube频道，从韩国日报专栏到Bloomberg、Global Asia等国际媒体 — 在半导体·AI·能源领域的广泛媒体活动。</span></p>
+
+  <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:600;margin:3rem 0 1.5rem;color:var(--txt);">📺 <span data-ko>TV/다큐멘터리</span><span data-en>TV/Documentaries</span><span data-cn>电视/纪录片</span></h3>
   <div class="mg">
-    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Bloomberg — "How China Became a Threat to the US's Tech Leadership"</h3><p class="src">Bloomberg · Yahoo Finance</p><p class="dt">Oct 2022</p></div>
-    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Global Asia — "Opportunities Await If China Is Shut Out of Semiconductor Innovation"</h3><p class="src">Global Asia, Vol. 17 No. 4</p><p class="dt">Dec 2022</p></div>
-    <div class="mc fu"><span class="badge b-intl">INTERNATIONAL</span><h3>Arirang TV — "Implications of Chip 4 Alliance for S. Korea"</h3><p class="src">Arirang News (English broadcast)</p><p class="dt">2022</p></div>
-    <div class="mc fu"><span class="badge b-pol">POLICY</span><h3>RAND Corporation — Technology Innovation, Economic Growth, and Geopolitics: Policy Options for South Korea</h3><p class="src">RAND Research Report RR-A2969-1</p><p class="dt">2024</p></div>
-    <div class="mc fu"><span class="badge b-pol">POLICY</span><h3>Trade & Security — <span data-ko>미국 대선 이후 글로벌 반도체 가치사슬 변동 연구</span><span data-en>Global Semiconductor Value Chain After U.S. Election</span><span data-cn>美国大选后全球半导体价值链变动研究</span></h3><p class="src">Trade & Security, Vol. 8</p><p class="dt">2025</p></div>
-    <div class="mc fu"><span class="badge b-bc">BROADCAST</span><h3>SBS 그랜드 퀘스트 — <span data-ko>"옹스트롬 시대, 반도체 기술의 난제들"</span><span data-en>"Angstrom Era: Challenges in Semiconductor Technology"</span><span data-cn>"埃米时代，半导体技术的难题"</span></h3><p class="src">SBS TV</p><p class="dt">2024</p></div>
-    <div class="mc fu"><span class="badge b-bc">YOUTUBE</span><h3><span data-ko>삼프로TV (3PRO TV) — 글로벌 반도체 · AI 칩 전략 해설</span><span data-en>3PRO TV — Global Semiconductor & AI Chip Strategy</span><span data-cn>3PRO TV — 全球半导体·AI芯片战略解读</span></h3><p class="src">YouTube · 3PRO TV</p><p class="dt">2023–2025</p></div>
-    <div class="mc fu"><span class="badge b-bc">YOUTUBE</span><h3><span data-ko>과학을보다 (Seeing Science) — 과학 대중화 패널</span><span data-en>Seeing Science (과학을보다) — Science Communication</span><span data-cn>科学を見る — 科学传播节目</span></h3><p class="src">YouTube · BODA</p><p class="dt">Regular</p></div>
-    <div class="mc fu"><span class="badge b-col">COLUMN</span><h3><span data-ko>피렌체의 식탁 — "권석준의 기술과 사회" 연재 칼럼</span><span data-en>Firenze Table — "Technology & Society" Column Series</span><span data-cn>佛罗伦萨餐桌 — "技术与社会"连载专栏</span></h3><p class="src"><span data-ko>피렌체의 식탁 (Medici Media)</span><span data-en>Firenze Table (Medici Media)</span><span data-cn>Medici Media</span></p><p class="dt">2023–present</p></div>
-    <div class="mc fu"><span class="badge b-dom">DOMESTIC</span><h3><span data-ko>이코노미조선 — "대만 벤치마킹해 'K-반도체·AI 혁신 패키지' 신속 추진해야"</span><span data-en>Economy Chosun — "Korea Needs K-Semiconductor·AI Innovation Package"</span><span data-cn>经济朝鲜 — "应借鉴台湾，迅速推进K-半导体·AI创新方案"</span></h3><p class="src"><span data-ko>이코노미조선</span><span data-en>Economy Chosun</span><span data-cn>经济朝鲜</span></p><p class="dt">Jun 2025</p></div>
+    <a href="https://kstar.kbs.co.kr/list_view.html?idx=388843" target="_blank" class="mc fu"><span class="badge b-tv">TV Documentary</span><h3>KBS 다큐 인사이트 "AI 빅퀘스트" (2부작)</h3><p class="src">KBS · 2026.01.01</p><p class="dt"><span data-ko>권석준 교수 중심 강연으로 구성된 AI 기술과 미래 전략 다큐멘터리</span><span data-en>AI technology and future strategy documentary centered on Prof. Kwon's lectures</span><span data-cn>以权锡俊教授演讲为核心的AI技术与未来战略纪录片</span></p></a>
+    <a href="https://grandquests.sbs.co.kr/1st/speakers/01.html" target="_blank" class="mc fu"><span class="badge b-tv">TV Program</span><h3>SBS 그랜드 퀘스트 (Session 1 연사)</h3><p class="src">SBS · 2024</p><p class="dt"><span data-ko>"옹스트롬 시대, 반도체 기술의 난제들" 주제 발표</span><span data-en>"Angstrom Era: Challenges in Semiconductor Technology"</span><span data-cn>"埃米时代，半导体技术的难题"</span></p></a>
+    <a href="https://www.youtube.com/shorts/C96dzkKqhcQ" target="_blank" class="mc fu"><span class="badge b-tv">TV Program</span><h3>SBS 교양이를 부탁해</h3><p class="src">SBS YouTube Shorts</p><p class="dt"><span data-ko>반도체 기술 대중화 출연</span><span data-en>Semiconductor technology popularization appearance</span><span data-cn>半导体技术科普出演</span></p></a>
+    
+    <!-- 신규 TV 프로그램 추가 -->
+    <a href="https://www.youtube.com/watch?v=dgevtHcm7ek" target="_blank" class="mc fu"><span class="badge b-tv">TV Program</span><h3>MBC 한판승부 — "칩4는 안보동맹이 아니다"</h3><p class="src">MBC 한판승부</p><p class="dt">2022.11.03</p></a>
+    <a href="https://www.youtube.com/watch?v=iv3080d108w" target="_blank" class="mc fu"><span class="badge b-tv">TV Program</span><h3>MBC 김종배의 시선집중 — 반도체 학과 정원 확대 전망</h3><p class="src">MBC 김종배의 시선집중</p><p class="dt">2022.06.16</p></a>
+    <a href="https://www.youtube.com/watch?v=U4SA66KrsOw" target="_blank" class="mc fu"><span class="badge b-tv">TV Program</span><h3>SBS 교양이를 부탁해 — "AI 메모리 가격 폭등"</h3><p class="src">SBS 교양이를 부탁해</p><p class="dt">2025.01</p></a>
+  </div>
+
+  <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:600;margin:3rem 0 1.5rem;color:var(--txt);">🎬 <span data-ko>유튜브</span><span data-en>YouTube</span><span data-cn>YouTube</span></h3>
+
+  <h4 style="font-size:.95rem;font-weight:600;color:var(--acc);margin:1.5rem 0 1rem;"><span data-ko>삼프로TV 압권 — 반도체 삼국지 시리즈</span><span data-en>3PRO TV — Semiconductor Trilogy Series</span><span data-cn>3PRO TV — 半导体三国志系列</span></h4>
+  <div class="mg">
+    <a href="https://www.youtube.com/watch?v=QEeoHddvE6Q" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"일본, 기술력의 함정에 빠지다"</h3><p class="src">3PRO TV · 반도체 삼국지 시리즈</p></a>
+    <a href="https://www.youtube.com/watch?v=ehpPfpj9Fi4" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"가진 건 기술뿐인 한국, 반도체 신화는 이어질까?" (3부 1화)</h3><p class="src">3PRO TV · 반도체 삼국지 시리즈</p></a>
+    <a href="https://www.youtube.com/watch?v=ei801QEPOeg" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"국가의 운명이 달렸다" 한·중·일 반도체 삼국지 (3부 2화)</h3><p class="src">3PRO TV · 반도체 삼국지 시리즈</p></a>
+    <a href="https://www.youtube.com/watch?v=S9blW4OL4ow" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"시진핑의 '반도체 중국몽', 결국 악몽이었나?" (2부 1화)</h3><p class="src">3PRO TV · 반도체 삼국지 시리즈</p></a>
+    <a href="https://www.youtube.com/watch?v=mOVjDO0qgOs" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"자립하려는 중국, 막으려는 미국... 반도체 전쟁의 끝은?" (2부 2화)</h3><p class="src">3PRO TV · 반도체 삼국지 시리즈</p></a>
+    <a href="https://www.youtube.com/watch?v=z_jtwbOWBr8" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"논란의 칩4 동맹, 우리에게 이득일까?" (6화 1부)</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=eUFzit_VBNY" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"반도체 1등을 노리는 중국, 우리에게 위협이 되나?" (6화 2부)</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=ShkwVb0a6bo" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"궁지에 몰린 한국 반도체, 결국 중국에서 발 빼나?" (34화 1부)</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=tuwwjR9Rl8E" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"한국의 미래가 궁금하거든, 고개를 들어 일본을 보라" (86화 1부)</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=cQIeTeR-Hqg" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"중국 7나노 칩 개발, '혁신'일까 '허풍'일까?" (88화 1부)</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=rblphkf2krw" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"'엔비디아 칩 안 써' 오히려 중국 반도체가 배짱부리는 이유" [FULL]</h3><p class="src">3PRO TV</p></a>
+    <a href="https://www.youtube.com/watch?v=L_qNmN7W9Hg" target="_blank" class="mc fu"><span class="badge b-youtube">압권</span><h3>"삼성전자는 '기회'를 잡을까?" (반도체 특집 2부)</h3><p class="src">3PRO TV</p></a>
+  </div>
+
+  <h4 style="font-size:.95rem;font-weight:600;color:var(--acc);margin:2rem 0 1rem;"><span data-ko>삼프로TV 언더스탠딩</span><span data-en>3PRO TV Understanding</span><span data-cn>3PRO TV 理解</span></h4>
+  <div class="mg">
+    <a href="https://apps.3protv.com/episode/view/42059" target="_blank" class="mc fu"><span class="badge b-youtube">언더스탠딩</span><h3><span data-ko>삼프로TV 언더스탠딩 출연</span><span data-en>3PRO TV Understanding Appearance</span><span data-cn>3PRO TV 理解 出演</span></h3><p class="src">3PRO TV</p></a>
+  </div>
+
+  <h4 style="font-size:.95rem;font-weight:600;color:var(--acc);margin:2rem 0 1rem;"><span data-ko>과학을보다 · 영화를보다 (보다 채널)</span><span data-en>Seeing Science · Seeing Movies (BODA)</span><span data-cn>科学を見る · 电影を見る（BODA频道）</span></h4>
+  <div class="mg">
+    <a href="https://www.youtube.com/watch?v=15HfoOom0S4" target="_blank" class="mc fu"><span class="badge b-youtube">과학을보다</span><h3>EP.172 — "전 세계가 한국 반도체 기술에 난리난 이유"</h3><p class="src"><span data-ko>보다 채널 (MC 정영진) · 레귤러 패널</span><span data-en>BODA Channel (MC Jung Youngjin) · Regular Panel</span><span data-cn>BODA频道 · 固定嘉宾</span></p></a>
+    <a href="https://www.youtube.com/watch?v=rW625zu_PpQ" target="_blank" class="mc fu"><span class="badge b-youtube">과학을보다</span><h3>EP.171 — "기억을 조작하는 기술"</h3><p class="src"><span data-ko>보다 채널 · 레귤러 패널</span><span data-en>BODA · Regular Panel</span><span data-cn>BODA · 固定嘉宾</span></p></a>
+    <a href="https://www.youtube.com/watch?v=n3X-pH-DSUg" target="_blank" class="mc fu"><span class="badge b-youtube">과학을보다</span><h3>EP.133 — "우주를 통째로 회전시키는 힘"</h3><p class="src"><span data-ko>보다 채널 · 레귤러 패널</span><span data-en>BODA · Regular Panel</span><span data-cn>BODA · 固定嘉宾</span></p></a>
+    <a href="https://www.youtube.com/watch?v=ZJx4l_Xi6Gs" target="_blank" class="mc fu"><span class="badge b-youtube">과학을보다</span><h3>EP.131 — "인류의 문명을 발전시킨 위대한 물질들"</h3><p class="src"><span data-ko>보다 채널 · 레귤러 패널</span><span data-en>BODA · Regular Panel</span><span data-cn>BODA · 固定嘉宾</span></p></a>
+    <a href="https://www.youtube.com/watch?v=4cWnII0YO6E" target="_blank" class="mc fu"><span class="badge b-youtube">영화를보다</span><h3>EP.30 — "인류 역사 최초로 인간의 맞은편에 선 존재의 등장"</h3><p class="src"><span data-ko>보다 채널 · 영화를보다</span><span data-en>BODA · Seeing Movies</span><span data-cn>BODA · 电影を見る</span></p></a>
+    <a href="https://www.youtube.com/watch?v=6TqD2UNEiEI" target="_blank" class="mc fu"><span class="badge b-youtube">콜라보다</span><h3><span data-ko>"심장을 바쳐버린 역사학자 &amp; 과학자의 진격의 거인 심층 리뷰" (1부)</span><span data-en>"Attack on Titan In-Depth Review by Historian &amp; Scientist" (Part 1)</span><span data-cn>"献出心脏的历史学家与科学家的进击的巨人深度评论"（第1部）</span></h3><p class="src"><span data-ko>콜라보다 (곽민수 × 권석준)</span><span data-en>Collaboda (Kwak Minsu × S. J. Kwon)</span><span data-cn>Collaboda（郭民秀 × 权锡俊）</span></p></a>
+    <a href="https://www.youtube.com/watch?v=ynIcH2jP7go" target="_blank" class="mc fu"><span class="badge b-youtube">콜라보다</span><h3><span data-ko>"인류가 영원히 전쟁을 끝낼 수 없는 이유" (진격의 거인 최종 리뷰, 2부)</span><span data-en>"Why Humanity Can Never End War" (Attack on Titan Final Review)</span><span data-cn>"人类永远无法结束战争的原因"（进击的巨人最终评论）</span></h3><p class="src"><span data-ko>콜라보다 (곽민수 × 권석준)</span><span data-en>Collaboda (Kwak Minsu × S. J. Kwon)</span><span data-cn>Collaboda（郭民秀 × 权锡俊）</span></p></a>
+  </div>
+
+  <h4 style="font-size:.95rem;font-weight:600;color:var(--acc);margin:2rem 0 1rem;"><span data-ko>기타 유튜브</span><span data-en>Other YouTube</span><span data-cn>其他YouTube</span></h4>
+  <div class="mg">
+    <a href="https://www.youtube.com/watch?v=519bRZn15ro" target="_blank" class="mc fu"><span class="badge b-youtube">Special</span><h3><span data-ko>"지구에 인간이 계속 살아야만 하는 이유" (베르나르 베르베르 × 권석준)</span><span data-en>"Why Humans Must Keep Living on Earth" (Bernard Werber × S. J. Kwon)</span><span data-cn>"人类必须继续生活在地球上的理由"（贝尔纳·韦伯 × 权锡俊）</span></h3><p class="src"><span data-ko>베르나르 베르베르 인터뷰</span><span data-en>Bernard Werber Interview</span><span data-cn>贝尔纳·韦伯访谈</span></p></a>
+    <a href="https://www.youtube.com/watch?v=ndL7V4sgjJM" target="_blank" class="mc fu"><span class="badge b-youtube">YouTube</span><h3>"H200 노땡큐한 중국, 믿는 구석이 있습니다"</h3><p class="src">YouTube</p><p class="dt">2025.12</p></a>
+    <a href="https://www.youtube.com/watch?v=7C6DLu2ycE0" target="_blank" class="mc fu"><span class="badge b-youtube">YouTube</span><h3><span data-ko>헤럴드 기업포럼 2025 강연 — AI 반도체 산업 재구성</span><span data-en>Herald Corporate Forum 2025 — AI Semiconductor Industry Restructuring</span><span data-cn>先驱报企业论坛2025 — AI半导体产业重构</span></h3><p class="src">Herald Corporation</p><p class="dt">2025</p></a>
+    
+    <!-- 신규 유튜브 영상 추가 -->
+    <a href="https://www.youtube.com/watch?v=MqC5lTdsnPQ" target="_blank" class="mc fu"><span class="badge b-youtube">YouTube</span><h3>"한국형 AI 지금 안 하면 난리납니다" (2부)</h3><p class="src">상세불명</p><p class="dt">2025.12.18</p></a>
+  </div>
+
+  <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:600;margin:3rem 0 1.5rem;color:var(--txt);">✍️ <span data-ko>칼럼/기고</span><span data-en>Columns/Articles</span><span data-cn>专栏/撰稿</span></h3>
+  <div class="mg">
+    <a href="https://www.hankookilbo.com/News/Read/A2025021811010004219" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3>한국일보 — "미·중 AI 데탕트는 없다"</h3><p class="src">한국일보 칼럼</p><p class="dt">2025.02</p></a>
+    <a href="https://www.hankookilbo.com/News/Read/A2025032414080004357" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3>한국일보 — "'실리콘 트라이앵글' 속 대만과 한국"</h3><p class="src">한국일보 칼럼</p><p class="dt">2025.03</p></a>
+    <a href="https://www.hankookilbo.com/News/Read/A2025061715400001234" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3>한국일보 — "AI·반도체·에너지 경쟁력과 AIX 이슈"</h3><p class="src">한국일보 칼럼</p><p class="dt">2025.06</p></a>
+    <a href="https://www.hankookilbo.com/News/Read/A2025072416250000300" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3>한국일보 — "AI 시대, 한국 메모리 반도체 생존 전략"</h3><p class="src">한국일보 칼럼</p><p class="dt">2025.07/08</p></a>
+    <a href="https://horizon.kias.re.kr/29873/" target="_blank" class="mc fu"><span class="badge b-column">Academic</span><h3>Horizon (고등과학원) — "물리 기반 신경망(PINN)이란 무엇인가"</h3><p class="src">고등과학원 Horizon</p><p class="dt">2024</p></a>
+    <a href="https://horizon.kias.re.kr/30065/" target="_blank" class="mc fu"><span class="badge b-column">Academic</span><h3>Horizon (고등과학원) — "PINN의 한계"</h3><p class="src">고등과학원 Horizon</p><p class="dt">2024</p></a>
+    <a href="https://horizon.kias.re.kr/12112/" target="_blank" class="mc fu"><span class="badge b-column">Academic</span><h3>Horizon (고등과학원) — "패턴의 과학 [1]: 패턴의 자기닮음꼴과 프랙탈 차원"</h3><p class="src">고등과학원 Horizon</p><p class="dt">2023</p></a>
+    <a href="https://horizon.kias.re.kr/12415/" target="_blank" class="mc fu"><span class="badge b-column">Academic</span><h3>Horizon (고등과학원) — "패턴의 과학 [2]: 패턴의 정보량과 엔트로피"</h3><p class="src">고등과학원 Horizon</p><p class="dt">2023</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=10059" target="_blank" class="mc fu"><span class="badge b-column">Column Series</span><h3><span data-ko>피렌체의 식탁 — "권석준의 반도체 전쟁" 4부작 연재</span><span data-en>Firenze Table — "Kwon's Semiconductor War" 4-Part Series</span><span data-cn>佛罗伦萨餐桌 — "权锡俊的半导体战争" 4部连载</span></h3><p class="src">Medici Media · 피렌체의 식탁</p><p class="dt">2020</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=22288" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "반도체 칩4동맹과 미국의 패권"</span><span data-en>Firenze Table — "Chip4 Alliance and US Hegemony"</span><span data-cn>佛罗伦萨餐桌 — "芯片4联盟与美国霸权"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2022.05</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=23800" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "미국의 대중 반도체 '전방위 봉쇄', 통할까?"</span><span data-en>Firenze Table — "Will the US Full-Scale Semiconductor Blockade Work?"</span><span data-cn>佛罗伦萨餐桌 — "美国对中半导体全面封锁能奏效吗？"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2022.09</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=24324" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "미국 '2022 국가안보전략'과 반도체 전쟁"</span><span data-en>Firenze Table — "US 2022 National Security Strategy and the Chip War"</span><span data-cn>佛罗伦萨餐桌 — "美国2022国家安全战略与半导体战争"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2022.10</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=25270" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "글로벌 반도체 산업 '세계화 시대'의 종언"</span><span data-en>Firenze Table — "End of the Globalization Era in Semiconductor Industry"</span><span data-cn>佛罗伦萨餐桌 — "全球半导体产业'全球化时代'的终结"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2022.12</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=26284" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "대미 '반도체 협상'에서 꼭 필요한 세 가지"</span><span data-en>Firenze Table — "Three Essentials in Semiconductor Negotiations with the US"</span><span data-cn>佛罗伦萨餐桌 — "对美半导体谈判中的三大要素"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2023.03</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=28109" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "'국가 전략기술' 12개로 명량의 바다를 넘을 각오"</span><span data-en>Firenze Table — "12 National Strategic Technologies to Navigate Stormy Seas"</span><span data-cn>佛罗伦萨餐桌 — "以12项国家战略技术跨越风浪"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2023.07</p></a>
+    <a href="http://www.firenzedt.com/news/articleView.html?idxno=28240" target="_blank" class="mc fu"><span class="badge b-column">Column</span><h3><span data-ko>피렌체의 식탁 — "한국 반도체 산업의 위험 분산 전략"</span><span data-en>Firenze Table — "Risk Diversification Strategy for Korea's Semiconductor Industry"</span><span data-cn>佛罗伦萨餐桌 — "韩国半导体产业的风险分散战略"</span></h3><p class="src">피렌체의 식탁</p><p class="dt">2023.07</p></a>
+
+    <!-- Seoul Review of Books Editorial Board Member Articles -->
+    <a href="https://contents.premium.naver.com/seoulreviewofbooks/home/contents" target="_blank" class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"패턴의 자동 완성이 주는 편안함과 쏠림" (1)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄</p><p class="dt">2024.07.09</p></a>
+    <div class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"패턴의 자동 완성이 주는 편안함과 쏠림" (2)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄</p><p class="dt">2024.07.16</p></div>
+    <a href="https://contents.premium.naver.com/seoulreviewofbooks/home/contents/250429083608763xc" target="_blank" class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"지능은 블록처럼 조립될 수 있는가" (1)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄</p><p class="dt">2025.04.29</p></a>
+    <div class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"지능은 블록처럼 조립될 수 있는가" (2)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄</p><p class="dt">2025.05.06</p></div>
+    <a href="https://contents.premium.naver.com/seoulreviewofbooks/home/contents/250512165132155ob" target="_blank" class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"지능은 블록처럼 조립될 수 있는가" (3)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄</p><p class="dt">2025.05.13</p></a>
+    <div class="mc fu"><span class="badge b-column" style="background:#e9d5ff;color:#6b21a8;">서울리뷰오브북스</span><h3>"인간의 지능은 AI로 가는 징검다리인가" (1~3)</h3><p class="src">서울리뷰오브북스 편집위원 기고 · 네이버 프리미엄 (3회 연재)</p><p class="dt">2025.09</p></div>
+  </div>
+
+  <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:600;margin:3rem 0 1.5rem;color:var(--txt);">📰 <span data-ko>언론 인터뷰</span><span data-en>Press Interviews</span><span data-cn>媒体采访</span></h3>
+  <div class="mg">
+    <a href="https://www.joongang.co.kr/article/25348337" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>중앙일보 안혜리의 직격인터뷰 — "빅 테크들, 하이에나처럼 우리 산업 데이터 노릴 것"</h3><p class="src">중앙일보</p><p class="dt">2025.07</p></a>
+    <a href="https://www.joongang.co.kr/article/25383418" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>중앙일보 2025 중앙포럼</h3><p class="src">중앙일보</p><p class="dt">2025.11</p></a>
+    <a href="https://economychosun.com/site/data/html_dir/2025/06/27/2025062700012.html" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>이코노미조선 — "대만 벤치마킹해 'K-반도체·AI 혁신 패키지' 신속 추진해야"</h3><p class="src">이코노미조선</p><p class="dt">2025.06</p></a>
+    <a href="https://www.donga.com/news/Economy/article/all/20221029/116214244/9" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>동아일보 — 반도체 산업 전망 인터뷰</h3><p class="src">동아일보</p><p class="dt">2022.10</p></a>
+    <a href="https://www.segye.com/newsView/20251030516701" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>세계일보 — 반도체 기술 동향 인터뷰</h3><p class="src">세계일보</p><p class="dt">2025.10</p></a>
+    
+    <!-- 신규 언론 인터뷰/기사 추가 -->
+    <a href="https://m.ddaily.co.kr/page/view/2024112116010290579" target="_blank" class="mc fu"><span class="badge b-interview">Conference</span><h3>[DIC2024] "韓 반도체 패키징 '반쪽'…'소재·물성' 문제해결해 주도권 잡아야"</h3><p class="src">디지털데일리</p><p class="dt">2024.11.21</p></a>
+    <a href="https://www.g-enews.com/article/Industry/2024/09/202409231244066448290c42db76_1" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>"반도체 기술우위로 美불확실성 줄여야"</h3><p class="src">글로벌이코노믹</p><p class="dt">2024.09.23</p></a>
+    <a href="https://v.daum.net/v/20250924162850571" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>"AI 반도체 '삼각동맹' 균열조짐…완전히 다른 형태의 메모리 탄생 예고"</h3><p class="src">헤럴드경제</p><p class="dt">2025.09.24</p></a>
+    <a href="https://www.yna.co.kr/view/AKR20241211085300008" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3>"내년 AI 붐 키워드는 분화…메모리칩도 HBM 이상 다변화 전망"</h3><p class="src">연합뉴스</p><p class="dt">2024.12.11</p></a>
+    <a href="https://www.joongang.co.kr/article/25403728" target="_blank" class="mc fu"><span class="badge b-interview">Analysis</span><h3>HBM 다음엔 HBF 시대 온다, 삼전·하닉 아직 안 늦은 까닭</h3><p class="src">중앙일보</p><p class="dt">2026.01</p></a>
+    <a href="https://www.news1.kr/photos/6738919" target="_blank" class="mc fu"><span class="badge b-interview">Forum</span><h3>뉴스1 미래산업포럼(NFIF) 2024 — K-반도체가 살 길</h3><p class="src">뉴스1</p><p class="dt">2024.07.03</p></a>
+    <a href="https://v.daum.net/v/20221017171958541" target="_blank" class="mc fu"><span class="badge b-interview">Interview</span><h3><span data-ko>주간조선 — '반도체 삼국지' 저자 인터뷰: "韓, 중국서 출구 전략 준비할 때"</span><span data-en>Weekly Chosun — Author Interview: "Korea Must Prepare China Exit Strategy"</span><span data-cn>周刊朝鲜 — 作者专访："韩国应准备中国退出战略"</span></h3><p class="src">주간조선</p><p class="dt">2022.10</p></a>
+  </div>
+
+  <h3 style="font-family:var(--fd);font-size:1.4rem;font-weight:600;margin:3rem 0 1.5rem;color:var(--txt);">📄 <span data-ko>정책/학술</span><span data-en>Policy/Academic</span><span data-cn>政策/学术</span></h3>
+  <div class="mg">
+    <div class="mc fu"><span class="badge b-policy">Policy Report</span><h3>RAND Corporation — Technology Innovation, Economic Growth, and Geopolitics: Policy Options for South Korea</h3><p class="src">RAND Research Report RR-A2969-1</p><p class="dt">2024</p></div>
+    <a href="https://kosti.or.kr/brd/board/212/L/menu/278?brdType=R&thisPage=1&bbsSn=5673&brdCodeValue=" target="_blank" class="mc fu"><span class="badge b-policy">Academic</span><h3>Trade & Security — <span data-ko>"미국 대선 이후의 글로벌 반도체 밸류체인 변동 방향 분석"</span><span data-en>"Analysis of Global Semiconductor Value Chain Changes After U.S. Election"</span><span data-cn>"美国大选后全球半导体价值链变动方向分析"</span></h3><p class="src"><span data-ko>무역안보관리원(KOSTI), Trade & Security Vol. 8</span><span data-en>KOSTI, Trade & Security Vol. 8</span><span data-cn>贸易安全管理院, Trade & Security Vol. 8</span></p><p class="dt">2024.12</p></a>
+    <a href="https://sicsarchive.skku.edu/#/search/si?all=1%7Ck%7Ca%7C%EA%B6%8C%EC%84%9D%EC%A4%80" target="_blank" class="mc fu"><span class="badge b-policy">Academic</span><h3><span data-ko>성균차이나브리프 — 중국 반도체 전략 분석</span><span data-en>SKKU China Brief — China Semiconductor Strategy Analysis</span><span data-cn>成均中国简报 — 中国半导体战略分析</span></h3><p class="src"><span data-ko>성균관대학교 성균중국연구원</span><span data-en>SKKU Institute of China Studies</span><span data-cn>成均馆大学成均中国研究院</span></p></a>
+    <div class="mc fu"><span class="badge b-policy">International</span><h3>Bloomberg — "How China Became a Threat to the US's Tech Leadership"</h3><p class="src">Bloomberg · Yahoo Finance</p><p class="dt">Oct 2022</p></div>
+    <div class="mc fu"><span class="badge b-policy">International</span><h3>Global Asia — "Opportunities Await If China Is Shut Out of Semiconductor Innovation"</h3><p class="src">Global Asia, Vol. 17 No. 4</p><p class="dt">Dec 2022</p></div>
+    <a href="https://samsungstf.org/ssrfPr/mobile/researcher/viewResearcher.do?idx=750" target="_blank" class="mc fu"><span class="badge b-policy">R&D</span><h3><span data-ko>삼성미래기술육성사업 선정 — 강상관 위상 결함 함유 나노 유기 격자 구현</span><span data-en>Samsung Future Technology — Correlated Topological Defect Nano-Organic Lattice</span><span data-cn>三星未来技术 — 强相关拓扑缺陷纳米有机晶格</span></h3><p class="src"><span data-ko>삼성미래기술육성사업 · 소재 분야</span><span data-en>Samsung Future Technology · Materials</span><span data-cn>三星未来技术育成事业 · 材料领域</span></p><p class="dt">2022</p></a>
   </div>
 </div>
 </section>
@@ -376,9 +493,45 @@ footer a{color:var(--acc-l);text-decoration:none}
   <h2 class="st fu"><span data-ko>기술과 전략을 잇는 저술 활동</span><span data-en>Writings that Bridge Technology and Strategy</span><span data-cn>连接技术与战略的著述</span></h2>
   <p class="ss fu"><span data-ko>반도체 산업 전략서 4권을 포함한 5권의 저서. 베스트셀러 『반도체 삼국지』, 2024 세종도서 학술부문 선정 『차세대 반도체』.</span><span data-en>Author of 5 books including 4 on semiconductor strategy. Bestseller "Three Kingdoms of Semiconductor" and 2024 Sejong Book Award winner "Next Generation Semiconductor."</span><span data-cn>著有5部作品，其中4部聚焦半导体产业战略。畅销书《半导体三国志》及2024年世宗图书学术奖获奖作品《新一代半导体》。</span></p>
   <div class="bg-grid">
-    <div class="bc fu"><div class="bc-em">📘</div><h3><span data-ko>반도체 삼국지</span><span data-en>Three Kingdoms of Semiconductor</span><span data-cn>半导体三国志</span></h3><div class="bsub"><span data-ko>뿌리와이파리, 2022 · 단독 저서</span><span data-en>Bburiwa Ipari, 2022 · Solo Author</span><span data-cn>뿌리와이파리出版, 2022 · 独著</span></div><p><span data-ko>한·중·일 반도체 산업의 현황, 역사, 미래 구도를 기술전략적 관점에서 분석.</span><span data-en>Strategic analysis of Korea-China-Japan semiconductor dynamics.</span><span data-cn>从技术战略视角分析韩中日半导体产业的现状、历史与未来格局。</span></p><span class="bt bt-best"><span data-ko>베스트셀러</span><span data-en>Bestseller</span><span data-cn>畅销书</span></span></div>
-    <div class="bc fu"><div class="bc-em">📗</div><h3><span data-ko>차세대 반도체</span><span data-en>Next Generation Semiconductor</span><span data-cn>新一代半导体</span></h3><div class="bsub"><span data-ko>플루토, 2023 · 공저 (석민구, 신창환)</span><span data-en>Pluto, 2023 · Co-authored</span><span data-cn>Pluto出版, 2023 · 合著</span></div><p><span data-ko>최종현학술원 웨비나 기반 차세대 반도체 기술·전략 종합서. 2024 세종도서 학술부문 선정.</span><span data-en>Comprehensive work on next-gen semiconductor tech & strategy. 2024 Sejong Book Award (Academic).</span><span data-cn>基于崔钟贤学术院研讨会的新一代半导体技术·战略综合著作。2024年世宗图书学术奖。</span></p><span class="bt bt-sj"><span data-ko>세종도서 선정</span><span data-en>Sejong Award</span><span data-cn>世宗图书奖</span></span></div>
-    <div class="bc fu"><div class="bc-em">📕</div><h3><span data-ko>미중 관계 레볼루션</span><span data-en>Revolution of the US-China Relation</span><span data-cn>美中关系革命</span></h3><div class="bsub"><span data-ko>2025 · 공저</span><span data-en>2025 · Co-authored</span><span data-cn>2025 · 合著</span></div><p><span data-ko>미·중 기술 패권 경쟁의 구조적 분석과 한국의 전략적 포지셔닝.</span><span data-en>Structural analysis of US-China tech rivalry and Korea's strategic positioning.</span><span data-cn>美中技术霸权竞争的结构性分析与韩国的战略定位。</span></p><span class="bt bt-new"><span data-ko>최신작</span><span data-en>Latest</span><span data-cn>最新</span></span></div>
+    <div class="bc fu">
+      <div class="bc-em">
+        <img src="https://image.yes24.com/goods/114338366/XL" alt="반도체 삼국지 표지" style="width:80px;height:120px;object-fit:cover;border-radius:4px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none;font-size:3rem;">📘</div>
+      </div>
+      <h3><span data-ko>반도체 삼국지</span><span data-en>Three Kingdoms of Semiconductor</span><span data-cn>半导体三国志</span></h3>
+      <div class="bsub"><span data-ko>뿌리와이파리, 2022 · 단독 저서</span><span data-en>Bburiwa Ipari, 2022 · Solo Author</span><span data-cn>뿌리와이파리出版, 2022 · 독著</span></div>
+      <p><span data-ko>한·중·일 반도체 산업의 현황, 역사, 미래 구도를 기술전략적 관점에서 분석.</span><span data-en>Strategic analysis of Korea-China-Japan semiconductor dynamics.</span><span data-cn>从技术战略视角分析韩中日半导体产业的现状、历史与未来格局。</span></p>
+      <span class="bt bt-best"><span data-ko>베스트셀러</span><span data-en>Bestseller</span><span data-cn>畅销书</span></span>
+      <div class="hc-links" style="margin-top:1rem;justify-content:center;">
+        <a href="https://product.kyobobook.co.kr/detail/S000062180066" target="_blank">교보문고</a>
+        <a href="https://www.yes24.com/product/goods/114338366" target="_blank">YES24</a>
+        <a href="https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=302939277" target="_blank">알라딘</a>
+      </div>
+    </div>
+    <div class="bc fu">
+      <div class="bc-em">
+        <img src="https://image.yes24.com/goods/119556685/XL" alt="차세대 반도체 표지" style="width:80px;height:120px;object-fit:cover;border-radius:4px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div style="display:none;font-size:3rem;">📗</div>
+      </div>
+      <h3><span data-ko>차세대 반도체</span><span data-en>Next Generation Semiconductor</span><span data-cn>新一代半导体</span></h3>
+      <div class="bsub"><span data-ko>플루토, 2023 · 공저 (석민구, 신창환)</span><span data-en>Pluto, 2023 · Co-authored</span><span data-cn>Pluto出版, 2023 · 合著</span></div>
+      <p><span data-ko>최종현학술원 웨비나 기반 차세대 반도체 기술·전략 종합서. 2024 세종도서 학술부문 선정.</span><span data-en>Comprehensive work on next-gen semiconductor tech & strategy. 2024 Sejong Book Award (Academic).</span><span data-cn>基于崔钟贤学术院研讨회的新一代半导体技术·战略综合著作。2024年世宗图书学术奖。</span></p>
+      <span class="bt bt-sj"><span data-ko>세종도서 선정</span><span data-en>Sejong Award</span><span data-cn>世宗图书奖</span></span>
+      <div class="hc-links" style="margin-top:1rem;justify-content:center;">
+        <a href="https://www.yes24.com/product/goods/119556685" target="_blank">YES24</a>
+        <a href="https://store.kyobobook.co.kr/person/detail/1116109901" target="_blank">교보문고 저자</a>
+      </div>
+    </div>
+    <div class="bc fu">
+      <div class="bc-em">📕</div>
+      <h3><span data-ko>미중 관계 레볼루션</span><span data-en>Revolution of the US-China Relation</span><span data-cn>美中关系革命</span></h3>
+      <div class="bsub"><span data-ko>2025 · 공저</span><span data-en>2025 · Co-authored</span><span data-cn>2025 · 合著</span></div>
+      <p><span data-ko>미·중 기술 패권 경쟁의 구조적 분석과 한국의 전략적 포지셔닝.</span><span data-en>Structural analysis of US-China tech rivalry and Korea's strategic positioning.</span><span data-cn>美中技术霸权竞争的结构性分析与韩国的战略定位。</span></p>
+      <span class="bt bt-new"><span data-ko>최신작</span><span data-en>Latest</span><span data-cn>最新</span></span>
+      <div class="hc-links" style="margin-top:1rem;justify-content:center;">
+        <a href="https://mamoth.co.kr/product/미중-관계-레볼루션/26321/" target="_blank">맘모스 출판사</a>
+      </div>
+    </div>
     <div class="bc fu"><div class="bc-em">📙</div><h3><span data-ko>호기심과 끈기 / 번역서 외</span><span data-en>Curiosity & Perseverance / Others</span><span data-cn>好奇心与毅力 / 译著等</span></h3><div class="bsub">2006, 2022</div><p><span data-ko>전자책 『호기심과 끈기』(2022), 번역서 『석유시대의 종말(Out of Gas)』(2006).</span><span data-en>E-book "Curiosity & Perseverance" (2022), translation of "Out of Gas" (2006).</span><span data-cn>电子书《好奇心与毅力》(2022)，译著《石油时代的终结》(2006)。</span></p></div>
   </div>
 </div>
@@ -498,7 +651,7 @@ footer a{color:var(--acc-l);text-decoration:none}
   <h2 class="st fu"><span data-ko>연락 및 외부 링크</span><span data-en>Contact & Links</span><span data-cn>联系方式与外部链接</span></h2>
   <div class="ctg fu" style="margin-top:2rem">
     <div>
-      <div class="cti"><div class="ct-icon">✉️</div><div><div class="lb">Email</div><div class="vl"><a href="/cdn-cgi/l/email-protection#74071e1b1b1a1f031b1a34071f1f015a111001"><span class="__cf_email__" data-cfemail="7d0e17121213160a12133d0e16160853181908">[email&#160;protected]</span></a></div></div></div>
+      <div class="cti"><div class="ct-icon">✉️</div><div><div class="lb">Email</div><div class="vl"><a href="mailto:sjkwon@skku.edu">sjkwon@skku.edu</a></div></div></div>
       <div class="cti"><div class="ct-icon">📍</div><div><div class="lb">Office</div><div class="vl"><span data-ko>경기도 수원시 장안구 서부로 2066 성균관대학교 자연과학캠퍼스 제2공학관 25303B</span><span data-en>Rm. 25303B, 2066 Seobu-Ro, Jangan-Gu, Suwon 16417, South Korea</span><span data-cn>韩国京畿道水原市长安区西部路2066 成均馆大学自然科学校区第二工学馆25303B</span></div></div></div>
       <div class="cti"><div class="ct-icon">📞</div><div><div class="lb">Phone</div><div class="vl">+82-31-290-7281 (Office)</div></div></div>
       <div class="cti"><div class="ct-icon">🔬</div><div><div class="lb">Lab</div><div class="vl">Smart Process & Materials Design Lab (SPMDL)</div></div></div>
@@ -526,11 +679,11 @@ footer a{color:var(--acc-l);text-decoration:none}
 
 <footer>
   <p>© 2026 Seokjoon Kwon (S. Joon Kwon), Ph.D. · 권석준 · 权锡俊</p>
-  <p style="margin-top:.5rem"><a href="/cdn-cgi/l/email-protection#d4a7bebbbbbabfa3bbba94a7bfbfa1fab1b0a1"><span class="__cf_email__" data-cfemail="5c2f36333332372b33321c2f37372972393829">[email&#160;protected]</span></a> · Sungkyunkwan University</p>
+  <p style="margin-top:.5rem"><a href="mailto:sjkwon@skku.edu">sjkwon@skku.edu</a> · Sungkyunkwan University</p>
 </footer>
 
 <!-- ==================== SCRIPTS ==================== -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Trilingual switching
 function setLang(lang) {
   document.body.className = lang === 'ko' ? '' : lang;
