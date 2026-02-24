@@ -171,6 +171,7 @@ section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,4vw,3rem)}
 .rc-n{font-family:var(--fm);font-size:.65rem;color:var(--acc-l);margin-bottom:.75rem}
 .rc h3{font-size:.95rem;font-weight:600;color:var(--txt-l);margin-bottom:.5rem;line-height:1.4}
 .rc p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
+a.rc{color:inherit}a.rc:hover{color:inherit}
 
 /* === PUBLICATIONS === */
 .pl{display:flex;flex-direction:column;gap:1rem}
@@ -561,24 +562,24 @@ footer a:hover{color:var(--acc)}
 </section>
 
 <!-- ==================== INTERACTIVE SIMULATORS ==================== -->
-<section id="simulators">
+<section id="simulators" class="dark">
 <div class="si">
   <div class="sl fu"><span data-ko>인터랙티브 시뮬레이터</span><span data-en>Interactive Simulators</span><span data-cn>交互式模拟器</span></div>
   <h2 class="st fu"><span data-ko>연구 기반 웹 시뮬레이터</span><span data-en>Research-Powered Web Simulators</span><span data-cn>基于研究的网页模拟器</span></h2>
   <p class="ss fu"><span data-ko>SPMDL 연구실의 물리 모델을 기반으로 구축한 오픈소스 시뮬레이터입니다. 누구나 브라우저에서 바로 실행할 수 있습니다.</span><span data-en>Open-source simulators built on SPMDL physics models. Run directly in your browser — no installation required.</span><span data-cn>基于SPMDL物理模型构建的开源模拟器，可直接在浏览器中运行，无需安装。</span></p>
   <div class="rg">
-    <a href="https://tandempvsimulator.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;cursor:pointer;">
-      <div class="rc-n">☀️</div>
+    <a href="https://tandempvsimulator.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;">
+      <div class="rc-n" style="font-size:1.5rem;">☀️</div>
       <h3><span data-ko>N-Junction Tandem PV Simulator</span><span data-en>N-Junction Tandem PV Simulator</span><span data-cn>N结串联太阳能电池模拟器</span></h3>
       <p><span data-ko>ABX₃ 페로브스카이트 고용체 + 다중소재 탠덤 태양전지 설계 · ML 밴드갭 예측 · 47,916개 조성 DB · 안정성 제약 최적화</span><span data-en>ABX₃ perovskite solid solution + multi-material tandem PV design · ML bandgap prediction · 47,916 composition DB · stability-constrained optimization</span><span data-cn>ABX₃钙钛矿固溶体+多材料串联光伏设计 · ML带隙预测 · 47,916组成数据库 · 稳定性约束优化</span></p>
     </a>
-    <a href="https://euv-simulator-v4-advanced.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;cursor:pointer;">
-      <div class="rc-n">🔬</div>
+    <a href="https://euv-simulator-v4-advanced.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;">
+      <div class="rc-n" style="font-size:1.5rem;">🔬</div>
       <h3><span data-ko>EUV MOR-PR Stochastic Simulator</span><span data-en>EUV MOR-PR Stochastic Simulator</span><span data-cn>EUV MOR-PR随机模拟器</span></h3>
       <p><span data-ko>Sn-Oxo 클러스터 노화 ODE + 확률론적 패터닝 · 13종 감광재 · RLS 트레이드오프 · 양자 shot noise 내재 모델</span><span data-en>Sn-Oxo cluster aging ODE + stochastic patterning · 13 photoresists · RLS trade-off · intrinsic quantum shot noise model</span><span data-cn>Sn-Oxo团簇老化ODE+随机图案化 · 13种光刻胶 · RLS权衡 · 内禀量子散粒噪声模型</span></p>
     </a>
-    <a href="https://cesmdt5-nbypqfhlppsdeu7gc8w3vg.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;cursor:pointer;">
-      <div class="rc-n">⚡</div>
+    <a href="https://cesmdt5-nbypqfhlppsdeu7gc8w3vg.streamlit.app/" target="_blank" class="rc fu" style="text-decoration:none;">
+      <div class="rc-n" style="font-size:1.5rem;">⚡</div>
       <h3><span data-ko>AIDC 마이크로그리드 디지털 트윈 (CEMS DT5)</span><span data-en>AIDC Microgrid Digital Twin (CEMS DT5)</span><span data-cn>AIDC微电网数字孪生（CEMS DT5）</span></h3>
       <p><span data-ko>100MW급 AI 데이터센터 · PV + 6-layer HESS + H₂ · AI-EMS 3-tier 제어 · 탄소·경제성·정책 시뮬레이션</span><span data-en>100MW-class AI datacenter · PV + 6-layer HESS + H₂ · AI-EMS 3-tier control · carbon, economics & policy simulation</span><span data-cn>100MW级AI数据中心 · PV+6层HESS+H₂ · AI-EMS三层控制 · 碳排放·经济性·政策模拟</span></p>
     </a>
